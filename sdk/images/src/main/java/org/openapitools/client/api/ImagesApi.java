@@ -29,10 +29,10 @@ import java.io.IOException;
 
 import org.openapitools.client.model.GithubComQeeqezApiInternalErrorsErrorResponse;
 import org.openapitools.client.model.Image;
-import org.openapitools.client.model.InternalImagesHandlerCompleteRequest;
 import org.openapitools.client.model.InternalImagesHandlerInitResponse;
-import org.openapitools.client.model.InternalImagesHandlerUploadInitRequest;
 import org.openapitools.client.model.PaginationPaginatedResponseImage;
+import org.openapitools.client.model.PostImagesUploadCompleteRequest;
+import org.openapitools.client.model.PostImagesUploadInitRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -122,7 +122,7 @@ public class ImagesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "*/*"
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -534,7 +534,7 @@ public class ImagesApi {
     }
     /**
      * Build call for postImagesUploadComplete
-     * @param request Upload completion request (required)
+     * @param postImagesUploadCompleteRequest Upload completion request (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -550,7 +550,7 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to complete upload or create image </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postImagesUploadCompleteCall(@javax.annotation.Nonnull InternalImagesHandlerCompleteRequest request, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postImagesUploadCompleteCall(@javax.annotation.Nonnull PostImagesUploadCompleteRequest postImagesUploadCompleteRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -564,7 +564,7 @@ public class ImagesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = request;
+        Object localVarPostBody = postImagesUploadCompleteRequest;
 
         // create path and map variables
         String localVarPath = "/images/upload/complete";
@@ -596,20 +596,20 @@ public class ImagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postImagesUploadCompleteValidateBeforeCall(@javax.annotation.Nonnull InternalImagesHandlerCompleteRequest request, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'request' is set
-        if (request == null) {
-            throw new ApiException("Missing the required parameter 'request' when calling postImagesUploadComplete(Async)");
+    private okhttp3.Call postImagesUploadCompleteValidateBeforeCall(@javax.annotation.Nonnull PostImagesUploadCompleteRequest postImagesUploadCompleteRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'postImagesUploadCompleteRequest' is set
+        if (postImagesUploadCompleteRequest == null) {
+            throw new ApiException("Missing the required parameter 'postImagesUploadCompleteRequest' when calling postImagesUploadComplete(Async)");
         }
 
-        return postImagesUploadCompleteCall(request, _callback);
+        return postImagesUploadCompleteCall(postImagesUploadCompleteRequest, _callback);
 
     }
 
     /**
      * Upload: Mark as complete
      * Complete the upload process and create the image record using API key authentication
-     * @param request Upload completion request (required)
+     * @param postImagesUploadCompleteRequest Upload completion request (required)
      * @return Image
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -624,15 +624,15 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to complete upload or create image </td><td>  -  </td></tr>
      </table>
      */
-    public Image postImagesUploadComplete(@javax.annotation.Nonnull InternalImagesHandlerCompleteRequest request) throws ApiException {
-        ApiResponse<Image> localVarResp = postImagesUploadCompleteWithHttpInfo(request);
+    public Image postImagesUploadComplete(@javax.annotation.Nonnull PostImagesUploadCompleteRequest postImagesUploadCompleteRequest) throws ApiException {
+        ApiResponse<Image> localVarResp = postImagesUploadCompleteWithHttpInfo(postImagesUploadCompleteRequest);
         return localVarResp.getData();
     }
 
     /**
      * Upload: Mark as complete
      * Complete the upload process and create the image record using API key authentication
-     * @param request Upload completion request (required)
+     * @param postImagesUploadCompleteRequest Upload completion request (required)
      * @return ApiResponse&lt;Image&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -647,8 +647,8 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to complete upload or create image </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Image> postImagesUploadCompleteWithHttpInfo(@javax.annotation.Nonnull InternalImagesHandlerCompleteRequest request) throws ApiException {
-        okhttp3.Call localVarCall = postImagesUploadCompleteValidateBeforeCall(request, null);
+    public ApiResponse<Image> postImagesUploadCompleteWithHttpInfo(@javax.annotation.Nonnull PostImagesUploadCompleteRequest postImagesUploadCompleteRequest) throws ApiException {
+        okhttp3.Call localVarCall = postImagesUploadCompleteValidateBeforeCall(postImagesUploadCompleteRequest, null);
         Type localVarReturnType = new TypeToken<Image>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -656,7 +656,7 @@ public class ImagesApi {
     /**
      * Upload: Mark as complete (asynchronously)
      * Complete the upload process and create the image record using API key authentication
-     * @param request Upload completion request (required)
+     * @param postImagesUploadCompleteRequest Upload completion request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -672,16 +672,16 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to complete upload or create image </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postImagesUploadCompleteAsync(@javax.annotation.Nonnull InternalImagesHandlerCompleteRequest request, final ApiCallback<Image> _callback) throws ApiException {
+    public okhttp3.Call postImagesUploadCompleteAsync(@javax.annotation.Nonnull PostImagesUploadCompleteRequest postImagesUploadCompleteRequest, final ApiCallback<Image> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postImagesUploadCompleteValidateBeforeCall(request, _callback);
+        okhttp3.Call localVarCall = postImagesUploadCompleteValidateBeforeCall(postImagesUploadCompleteRequest, _callback);
         Type localVarReturnType = new TypeToken<Image>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for postImagesUploadInit
-     * @param request Upload initialization request (required)
+     * @param postImagesUploadInitRequest Upload initialization request (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -696,7 +696,7 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to initialize upload </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postImagesUploadInitCall(@javax.annotation.Nonnull InternalImagesHandlerUploadInitRequest request, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postImagesUploadInitCall(@javax.annotation.Nonnull PostImagesUploadInitRequest postImagesUploadInitRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -710,7 +710,7 @@ public class ImagesApi {
             basePath = null;
         }
 
-        Object localVarPostBody = request;
+        Object localVarPostBody = postImagesUploadInitRequest;
 
         // create path and map variables
         String localVarPath = "/images/upload/init";
@@ -742,20 +742,20 @@ public class ImagesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postImagesUploadInitValidateBeforeCall(@javax.annotation.Nonnull InternalImagesHandlerUploadInitRequest request, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'request' is set
-        if (request == null) {
-            throw new ApiException("Missing the required parameter 'request' when calling postImagesUploadInit(Async)");
+    private okhttp3.Call postImagesUploadInitValidateBeforeCall(@javax.annotation.Nonnull PostImagesUploadInitRequest postImagesUploadInitRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'postImagesUploadInitRequest' is set
+        if (postImagesUploadInitRequest == null) {
+            throw new ApiException("Missing the required parameter 'postImagesUploadInitRequest' when calling postImagesUploadInit(Async)");
         }
 
-        return postImagesUploadInitCall(request, _callback);
+        return postImagesUploadInitCall(postImagesUploadInitRequest, _callback);
 
     }
 
     /**
      * Upload: Init
      * Initialize a presigned URL upload for an image file using API key authentication
-     * @param request Upload initialization request (required)
+     * @param postImagesUploadInitRequest Upload initialization request (required)
      * @return InternalImagesHandlerInitResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -769,15 +769,15 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to initialize upload </td><td>  -  </td></tr>
      </table>
      */
-    public InternalImagesHandlerInitResponse postImagesUploadInit(@javax.annotation.Nonnull InternalImagesHandlerUploadInitRequest request) throws ApiException {
-        ApiResponse<InternalImagesHandlerInitResponse> localVarResp = postImagesUploadInitWithHttpInfo(request);
+    public InternalImagesHandlerInitResponse postImagesUploadInit(@javax.annotation.Nonnull PostImagesUploadInitRequest postImagesUploadInitRequest) throws ApiException {
+        ApiResponse<InternalImagesHandlerInitResponse> localVarResp = postImagesUploadInitWithHttpInfo(postImagesUploadInitRequest);
         return localVarResp.getData();
     }
 
     /**
      * Upload: Init
      * Initialize a presigned URL upload for an image file using API key authentication
-     * @param request Upload initialization request (required)
+     * @param postImagesUploadInitRequest Upload initialization request (required)
      * @return ApiResponse&lt;InternalImagesHandlerInitResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -791,8 +791,8 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to initialize upload </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InternalImagesHandlerInitResponse> postImagesUploadInitWithHttpInfo(@javax.annotation.Nonnull InternalImagesHandlerUploadInitRequest request) throws ApiException {
-        okhttp3.Call localVarCall = postImagesUploadInitValidateBeforeCall(request, null);
+    public ApiResponse<InternalImagesHandlerInitResponse> postImagesUploadInitWithHttpInfo(@javax.annotation.Nonnull PostImagesUploadInitRequest postImagesUploadInitRequest) throws ApiException {
+        okhttp3.Call localVarCall = postImagesUploadInitValidateBeforeCall(postImagesUploadInitRequest, null);
         Type localVarReturnType = new TypeToken<InternalImagesHandlerInitResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -800,7 +800,7 @@ public class ImagesApi {
     /**
      * Upload: Init (asynchronously)
      * Initialize a presigned URL upload for an image file using API key authentication
-     * @param request Upload initialization request (required)
+     * @param postImagesUploadInitRequest Upload initialization request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -815,9 +815,9 @@ public class ImagesApi {
         <tr><td> 500 </td><td> Failed to initialize upload </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postImagesUploadInitAsync(@javax.annotation.Nonnull InternalImagesHandlerUploadInitRequest request, final ApiCallback<InternalImagesHandlerInitResponse> _callback) throws ApiException {
+    public okhttp3.Call postImagesUploadInitAsync(@javax.annotation.Nonnull PostImagesUploadInitRequest postImagesUploadInitRequest, final ApiCallback<InternalImagesHandlerInitResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postImagesUploadInitValidateBeforeCall(request, _callback);
+        okhttp3.Call localVarCall = postImagesUploadInitValidateBeforeCall(postImagesUploadInitRequest, _callback);
         Type localVarReturnType = new TypeToken<InternalImagesHandlerInitResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

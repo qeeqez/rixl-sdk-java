@@ -2,7 +2,7 @@
 
 RIXL API
 - API version: 2.0
-  - Build date: 2026-03-23T15:36:05.765653+01:00[Africa/Lagos]
+  - Build date: 2026-03-23T17:20:02.990110+01:00[Africa/Lagos]
   - Generator version: 7.20.0
 
 **Build a powerful video experience from on-demand streaming to dynamic social feeds with a single API.**
@@ -143,6 +143,8 @@ Class | Method | HTTP request | Description
  - [ModelFile](docs/ModelFile.md)
  - [PaginationPaginatedResponseImage](docs/PaginationPaginatedResponseImage.md)
  - [PaginationPagination](docs/PaginationPagination.md)
+ - [PostImagesUploadCompleteRequest](docs/PostImagesUploadCompleteRequest.md)
+ - [PostImagesUploadInitRequest](docs/PostImagesUploadInitRequest.md)
 
 
 <a id="documentation-for-authorization"></a>

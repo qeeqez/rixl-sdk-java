@@ -15,6 +15,8 @@ docs/InternalImagesHandlerUploadInitRequest.md
 docs/ModelFile.md
 docs/PaginationPaginatedResponseImage.md
 docs/PaginationPagination.md
+docs/PostImagesUploadCompleteRequest.md
+docs/PostImagesUploadInitRequest.md
 git_push.sh
 gradle.properties
 gradle/wrapper/gradle-wrapper.jar
@@ -52,3 +54,7 @@ src/main/java/org/openapitools/client/model/InternalImagesHandlerUploadInitReque
 src/main/java/org/openapitools/client/model/ModelFile.java
 src/main/java/org/openapitools/client/model/PaginationPaginatedResponseImage.java
 src/main/java/org/openapitools/client/model/PaginationPagination.java
+src/main/java/org/openapitools/client/model/PostImagesUploadCompleteRequest.java
+src/main/java/org/openapitools/client/model/PostImagesUploadInitRequest.java
+src/test/java/org/openapitools/client/model/PostImagesUploadCompleteRequestTest.java
+src/test/java/org/openapitools/client/model/PostImagesUploadInitRequestTest.java

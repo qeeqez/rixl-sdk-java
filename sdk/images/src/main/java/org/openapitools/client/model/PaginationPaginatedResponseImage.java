@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * PaginationPaginatedResponseImage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T15:36:05.765653+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T17:20:02.990110+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
 public class PaginationPaginatedResponseImage {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
@@ -100,7 +100,7 @@ public class PaginationPaginatedResponseImage {
   }
 
   /**
-   * Pagination data for the request.
+   * Get pagination
    * @return pagination
    */
   @javax.annotation.Nullable

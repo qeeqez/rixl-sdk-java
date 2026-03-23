@@ -20,6 +20,9 @@ docs/InternalVideosHandlerSubtitlesLanguageResponse.md
 docs/ModelFile.md
 docs/PaginationPaginatedResponseVideo.md
 docs/PaginationPagination.md
+docs/PostVideosUploadCompleteRequest.md
+docs/PostVideosUploadInitRequest.md
+docs/PutVideosVideoIdChaptersRequest.md
 docs/Subtitle.md
 docs/SubtitleDelete.md
 docs/UpdateChaptersRequest.md
@@ -70,9 +73,15 @@ src/main/java/org/openapitools/client/model/InternalVideosHandlerSubtitlesLangua
 src/main/java/org/openapitools/client/model/ModelFile.java
 src/main/java/org/openapitools/client/model/PaginationPaginatedResponseVideo.java
 src/main/java/org/openapitools/client/model/PaginationPagination.java
+src/main/java/org/openapitools/client/model/PostVideosUploadCompleteRequest.java
+src/main/java/org/openapitools/client/model/PostVideosUploadInitRequest.java
+src/main/java/org/openapitools/client/model/PutVideosVideoIdChaptersRequest.java
 src/main/java/org/openapitools/client/model/Subtitle.java
 src/main/java/org/openapitools/client/model/SubtitleDelete.java
 src/main/java/org/openapitools/client/model/UpdateChaptersRequest.java
 src/main/java/org/openapitools/client/model/UpdateChaptersResponse.java
 src/main/java/org/openapitools/client/model/Video.java
 src/main/java/org/openapitools/client/model/VideoUploadInitRequest.java
+src/test/java/org/openapitools/client/model/PostVideosUploadCompleteRequestTest.java
+src/test/java/org/openapitools/client/model/PostVideosUploadInitRequestTest.java
+src/test/java/org/openapitools/client/model/PutVideosVideoIdChaptersRequestTest.java

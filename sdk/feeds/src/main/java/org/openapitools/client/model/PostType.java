@@ -31,7 +31,11 @@ public enum PostType {
   
   PostTypeImage("image"),
   
-  PostTypeVideo("video");
+  PostTypeVideo("video"),
+  
+  VIDEO2("video"),
+  
+  IMAGE2("image");
 
   private String value;
 

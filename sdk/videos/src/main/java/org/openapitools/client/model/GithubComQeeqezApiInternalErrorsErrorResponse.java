@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * Standard error response returned by the API
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T15:36:03.624876+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T17:20:00.639892+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
 public class GithubComQeeqezApiInternalErrorsErrorResponse {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)

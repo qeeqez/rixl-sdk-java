@@ -2,7 +2,7 @@
 
 RIXL API
 - API version: 2.0
-  - Build date: 2026-03-23T15:36:01.521713+01:00[Africa/Lagos]
+  - Build date: 2026-03-23T17:19:58.230469+01:00[Africa/Lagos]
   - Generator version: 7.20.0
 
 **Build a powerful video experience from on-demand streaming to dynamic social feeds with a single API.**

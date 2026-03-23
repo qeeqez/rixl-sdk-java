@@ -33,7 +33,13 @@ public enum GithubComQeeqezApiDbSqlcVideoQuality {
   
   VideoQualityShorts("shorts"),
   
-  VideoQualityPro("pro");
+  VideoQualityPro("pro"),
+  
+  BASIC2("basic"),
+  
+  SHORTS2("shorts"),
+  
+  PRO2("pro");
 
   private String value;
 

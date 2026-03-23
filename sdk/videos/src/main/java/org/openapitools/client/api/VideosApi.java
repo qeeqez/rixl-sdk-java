@@ -29,18 +29,17 @@ import java.io.IOException;
 
 import org.openapitools.client.model.AudioTrack;
 import org.openapitools.client.model.AudioTrackDelete;
-import java.io.File;
 import org.openapitools.client.model.GithubComQeeqezApiInternalErrorsErrorResponse;
-import org.openapitools.client.model.GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest;
 import org.openapitools.client.model.GithubComQeeqezApiInternalVideosHandlerUploadInitResponse;
 import org.openapitools.client.model.InternalVideosHandlerSubtitlesLanguageResponse;
 import org.openapitools.client.model.PaginationPaginatedResponseVideo;
+import org.openapitools.client.model.PostVideosUploadCompleteRequest;
+import org.openapitools.client.model.PostVideosUploadInitRequest;
+import org.openapitools.client.model.PutVideosVideoIdChaptersRequest;
 import org.openapitools.client.model.Subtitle;
 import org.openapitools.client.model.SubtitleDelete;
-import org.openapitools.client.model.UpdateChaptersRequest;
 import org.openapitools.client.model.UpdateChaptersResponse;
 import org.openapitools.client.model.Video;
-import org.openapitools.client.model.VideoUploadInitRequest;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -125,7 +124,7 @@ public class VideosApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "*/*"
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -254,7 +253,7 @@ public class VideosApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "*/*"
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -395,7 +394,7 @@ public class VideosApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "*/*"
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -690,7 +689,7 @@ public class VideosApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "*/*"
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -828,7 +827,7 @@ public class VideosApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "*/*"
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -957,7 +956,7 @@ public class VideosApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "*/*"
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1098,7 +1097,7 @@ public class VideosApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "*/*"
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1636,7 +1635,7 @@ public class VideosApi {
     }
     /**
      * Build call for postVideosUploadComplete
-     * @param request Video upload completion request (required)
+     * @param postVideosUploadCompleteRequest Video upload completion request (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1652,7 +1651,7 @@ public class VideosApi {
         <tr><td> 500 </td><td> Failed to complete upload </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postVideosUploadCompleteCall(@javax.annotation.Nonnull GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest request, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postVideosUploadCompleteCall(@javax.annotation.Nonnull PostVideosUploadCompleteRequest postVideosUploadCompleteRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1666,7 +1665,7 @@ public class VideosApi {
             basePath = null;
         }
 
-        Object localVarPostBody = request;
+        Object localVarPostBody = postVideosUploadCompleteRequest;
 
         // create path and map variables
         String localVarPath = "/videos/upload/complete";
@@ -1698,20 +1697,20 @@ public class VideosApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postVideosUploadCompleteValidateBeforeCall(@javax.annotation.Nonnull GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest request, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'request' is set
-        if (request == null) {
-            throw new ApiException("Missing the required parameter 'request' when calling postVideosUploadComplete(Async)");
+    private okhttp3.Call postVideosUploadCompleteValidateBeforeCall(@javax.annotation.Nonnull PostVideosUploadCompleteRequest postVideosUploadCompleteRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'postVideosUploadCompleteRequest' is set
+        if (postVideosUploadCompleteRequest == null) {
+            throw new ApiException("Missing the required parameter 'postVideosUploadCompleteRequest' when calling postVideosUploadComplete(Async)");
         }
 
-        return postVideosUploadCompleteCall(request, _callback);
+        return postVideosUploadCompleteCall(postVideosUploadCompleteRequest, _callback);
 
     }
 
     /**
      * Upload: Mark as complete
      * Mark a video upload as complete after successful upload to storage using API key authentication
-     * @param request Video upload completion request (required)
+     * @param postVideosUploadCompleteRequest Video upload completion request (required)
      * @return Video
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1726,15 +1725,15 @@ public class VideosApi {
         <tr><td> 500 </td><td> Failed to complete upload </td><td>  -  </td></tr>
      </table>
      */
-    public Video postVideosUploadComplete(@javax.annotation.Nonnull GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest request) throws ApiException {
-        ApiResponse<Video> localVarResp = postVideosUploadCompleteWithHttpInfo(request);
+    public Video postVideosUploadComplete(@javax.annotation.Nonnull PostVideosUploadCompleteRequest postVideosUploadCompleteRequest) throws ApiException {
+        ApiResponse<Video> localVarResp = postVideosUploadCompleteWithHttpInfo(postVideosUploadCompleteRequest);
         return localVarResp.getData();
     }
 
     /**
      * Upload: Mark as complete
      * Mark a video upload as complete after successful upload to storage using API key authentication
-     * @param request Video upload completion request (required)
+     * @param postVideosUploadCompleteRequest Video upload completion request (required)
      * @return ApiResponse&lt;Video&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1749,8 +1748,8 @@ public class VideosApi {
         <tr><td> 500 </td><td> Failed to complete upload </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Video> postVideosUploadCompleteWithHttpInfo(@javax.annotation.Nonnull GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest request) throws ApiException {
-        okhttp3.Call localVarCall = postVideosUploadCompleteValidateBeforeCall(request, null);
+    public ApiResponse<Video> postVideosUploadCompleteWithHttpInfo(@javax.annotation.Nonnull PostVideosUploadCompleteRequest postVideosUploadCompleteRequest) throws ApiException {
+        okhttp3.Call localVarCall = postVideosUploadCompleteValidateBeforeCall(postVideosUploadCompleteRequest, null);
         Type localVarReturnType = new TypeToken<Video>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1758,7 +1757,7 @@ public class VideosApi {
     /**
      * Upload: Mark as complete (asynchronously)
      * Mark a video upload as complete after successful upload to storage using API key authentication
-     * @param request Video upload completion request (required)
+     * @param postVideosUploadCompleteRequest Video upload completion request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1774,16 +1773,16 @@ public class VideosApi {
         <tr><td> 500 </td><td> Failed to complete upload </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postVideosUploadCompleteAsync(@javax.annotation.Nonnull GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest request, final ApiCallback<Video> _callback) throws ApiException {
+    public okhttp3.Call postVideosUploadCompleteAsync(@javax.annotation.Nonnull PostVideosUploadCompleteRequest postVideosUploadCompleteRequest, final ApiCallback<Video> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postVideosUploadCompleteValidateBeforeCall(request, _callback);
+        okhttp3.Call localVarCall = postVideosUploadCompleteValidateBeforeCall(postVideosUploadCompleteRequest, _callback);
         Type localVarReturnType = new TypeToken<Video>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for postVideosUploadInit
-     * @param request Video upload initialization request (required)
+     * @param postVideosUploadInitRequest Video upload initialization request (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1798,7 +1797,7 @@ public class VideosApi {
         <tr><td> 500 </td><td> Failed to initialize upload </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postVideosUploadInitCall(@javax.annotation.Nonnull VideoUploadInitRequest request, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postVideosUploadInitCall(@javax.annotation.Nonnull PostVideosUploadInitRequest postVideosUploadInitRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1812,7 +1811,7 @@ public class VideosApi {
             basePath = null;
         }
 
-        Object localVarPostBody = request;
+        Object localVarPostBody = postVideosUploadInitRequest;
 
         // create path and map variables
         String localVarPath = "/videos/upload/init";
@@ -1844,20 +1843,20 @@ public class VideosApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postVideosUploadInitValidateBeforeCall(@javax.annotation.Nonnull VideoUploadInitRequest request, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'request' is set
-        if (request == null) {
-            throw new ApiException("Missing the required parameter 'request' when calling postVideosUploadInit(Async)");
+    private okhttp3.Call postVideosUploadInitValidateBeforeCall(@javax.annotation.Nonnull PostVideosUploadInitRequest postVideosUploadInitRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'postVideosUploadInitRequest' is set
+        if (postVideosUploadInitRequest == null) {
+            throw new ApiException("Missing the required parameter 'postVideosUploadInitRequest' when calling postVideosUploadInit(Async)");
         }
 
-        return postVideosUploadInitCall(request, _callback);
+        return postVideosUploadInitCall(postVideosUploadInitRequest, _callback);
 
     }
 
     /**
      * Upload: Init
      * Initialize a video upload and get presigned URLs for video and poster using API key authentication
-     * @param request Video upload initialization request (required)
+     * @param postVideosUploadInitRequest Video upload initialization request (required)
      * @return GithubComQeeqezApiInternalVideosHandlerUploadInitResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1871,15 +1870,15 @@ public class VideosApi {
         <tr><td> 500 </td><td> Failed to initialize upload </td><td>  -  </td></tr>
      </table>
      */
-    public GithubComQeeqezApiInternalVideosHandlerUploadInitResponse postVideosUploadInit(@javax.annotation.Nonnull VideoUploadInitRequest request) throws ApiException {
-        ApiResponse<GithubComQeeqezApiInternalVideosHandlerUploadInitResponse> localVarResp = postVideosUploadInitWithHttpInfo(request);
+    public GithubComQeeqezApiInternalVideosHandlerUploadInitResponse postVideosUploadInit(@javax.annotation.Nonnull PostVideosUploadInitRequest postVideosUploadInitRequest) throws ApiException {
+        ApiResponse<GithubComQeeqezApiInternalVideosHandlerUploadInitResponse> localVarResp = postVideosUploadInitWithHttpInfo(postVideosUploadInitRequest);
         return localVarResp.getData();
     }
 
     /**
      * Upload: Init
      * Initialize a video upload and get presigned URLs for video and poster using API key authentication
-     * @param request Video upload initialization request (required)
+     * @param postVideosUploadInitRequest Video upload initialization request (required)
      * @return ApiResponse&lt;GithubComQeeqezApiInternalVideosHandlerUploadInitResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1893,8 +1892,8 @@ public class VideosApi {
         <tr><td> 500 </td><td> Failed to initialize upload </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GithubComQeeqezApiInternalVideosHandlerUploadInitResponse> postVideosUploadInitWithHttpInfo(@javax.annotation.Nonnull VideoUploadInitRequest request) throws ApiException {
-        okhttp3.Call localVarCall = postVideosUploadInitValidateBeforeCall(request, null);
+    public ApiResponse<GithubComQeeqezApiInternalVideosHandlerUploadInitResponse> postVideosUploadInitWithHttpInfo(@javax.annotation.Nonnull PostVideosUploadInitRequest postVideosUploadInitRequest) throws ApiException {
+        okhttp3.Call localVarCall = postVideosUploadInitValidateBeforeCall(postVideosUploadInitRequest, null);
         Type localVarReturnType = new TypeToken<GithubComQeeqezApiInternalVideosHandlerUploadInitResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1902,7 +1901,7 @@ public class VideosApi {
     /**
      * Upload: Init (asynchronously)
      * Initialize a video upload and get presigned URLs for video and poster using API key authentication
-     * @param request Video upload initialization request (required)
+     * @param postVideosUploadInitRequest Video upload initialization request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1917,9 +1916,9 @@ public class VideosApi {
         <tr><td> 500 </td><td> Failed to initialize upload </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postVideosUploadInitAsync(@javax.annotation.Nonnull VideoUploadInitRequest request, final ApiCallback<GithubComQeeqezApiInternalVideosHandlerUploadInitResponse> _callback) throws ApiException {
+    public okhttp3.Call postVideosUploadInitAsync(@javax.annotation.Nonnull PostVideosUploadInitRequest postVideosUploadInitRequest, final ApiCallback<GithubComQeeqezApiInternalVideosHandlerUploadInitResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postVideosUploadInitValidateBeforeCall(request, _callback);
+        okhttp3.Call localVarCall = postVideosUploadInitValidateBeforeCall(postVideosUploadInitRequest, _callback);
         Type localVarReturnType = new TypeToken<GithubComQeeqezApiInternalVideosHandlerUploadInitResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1927,9 +1926,6 @@ public class VideosApi {
     /**
      * Build call for postVideosVideoIdAudioTracks
      * @param videoId Video ID (required)
-     * @param files Audio files (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac) (required)
-     * @param languageCodes Comma-separated language codes (required)
-     * @param labels Comma-separated labels (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1940,7 +1936,7 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postVideosVideoIdAudioTracksCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull List<File> files, @javax.annotation.Nonnull String languageCodes, @javax.annotation.Nonnull String labels, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postVideosVideoIdAudioTracksCall(@javax.annotation.Nonnull String videoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1966,18 +1962,6 @@ public class VideosApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (files != null) {
-            localVarFormParams.put("files", files);
-        }
-
-        if (languageCodes != null) {
-            localVarFormParams.put("language_codes", languageCodes);
-        }
-
-        if (labels != null) {
-            localVarFormParams.put("labels", labels);
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1987,6 +1971,7 @@ public class VideosApi {
         }
 
         final String[] localVarContentTypes = {
+            "application/x-www-form-urlencoded",
             "multipart/form-data"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
@@ -1999,28 +1984,13 @@ public class VideosApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postVideosVideoIdAudioTracksValidateBeforeCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull List<File> files, @javax.annotation.Nonnull String languageCodes, @javax.annotation.Nonnull String labels, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postVideosVideoIdAudioTracksValidateBeforeCall(@javax.annotation.Nonnull String videoId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'videoId' is set
         if (videoId == null) {
             throw new ApiException("Missing the required parameter 'videoId' when calling postVideosVideoIdAudioTracks(Async)");
         }
 
-        // verify the required parameter 'files' is set
-        if (files == null) {
-            throw new ApiException("Missing the required parameter 'files' when calling postVideosVideoIdAudioTracks(Async)");
-        }
-
-        // verify the required parameter 'languageCodes' is set
-        if (languageCodes == null) {
-            throw new ApiException("Missing the required parameter 'languageCodes' when calling postVideosVideoIdAudioTracks(Async)");
-        }
-
-        // verify the required parameter 'labels' is set
-        if (labels == null) {
-            throw new ApiException("Missing the required parameter 'labels' when calling postVideosVideoIdAudioTracks(Async)");
-        }
-
-        return postVideosVideoIdAudioTracksCall(videoId, files, languageCodes, labels, _callback);
+        return postVideosVideoIdAudioTracksCall(videoId, _callback);
 
     }
 
@@ -2028,9 +1998,6 @@ public class VideosApi {
      * Bulk upsert video audio tracks
      * Replace all audio tracks with the provided ones using API key authentication
      * @param videoId Video ID (required)
-     * @param files Audio files (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac) (required)
-     * @param languageCodes Comma-separated language codes (required)
-     * @param labels Comma-separated labels (required)
      * @return List&lt;AudioTrack&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2040,8 +2007,8 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<AudioTrack> postVideosVideoIdAudioTracks(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull List<File> files, @javax.annotation.Nonnull String languageCodes, @javax.annotation.Nonnull String labels) throws ApiException {
-        ApiResponse<List<AudioTrack>> localVarResp = postVideosVideoIdAudioTracksWithHttpInfo(videoId, files, languageCodes, labels);
+    public List<AudioTrack> postVideosVideoIdAudioTracks(@javax.annotation.Nonnull String videoId) throws ApiException {
+        ApiResponse<List<AudioTrack>> localVarResp = postVideosVideoIdAudioTracksWithHttpInfo(videoId);
         return localVarResp.getData();
     }
 
@@ -2049,9 +2016,6 @@ public class VideosApi {
      * Bulk upsert video audio tracks
      * Replace all audio tracks with the provided ones using API key authentication
      * @param videoId Video ID (required)
-     * @param files Audio files (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac) (required)
-     * @param languageCodes Comma-separated language codes (required)
-     * @param labels Comma-separated labels (required)
      * @return ApiResponse&lt;List&lt;AudioTrack&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2061,8 +2025,8 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<AudioTrack>> postVideosVideoIdAudioTracksWithHttpInfo(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull List<File> files, @javax.annotation.Nonnull String languageCodes, @javax.annotation.Nonnull String labels) throws ApiException {
-        okhttp3.Call localVarCall = postVideosVideoIdAudioTracksValidateBeforeCall(videoId, files, languageCodes, labels, null);
+    public ApiResponse<List<AudioTrack>> postVideosVideoIdAudioTracksWithHttpInfo(@javax.annotation.Nonnull String videoId) throws ApiException {
+        okhttp3.Call localVarCall = postVideosVideoIdAudioTracksValidateBeforeCall(videoId, null);
         Type localVarReturnType = new TypeToken<List<AudioTrack>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2071,9 +2035,6 @@ public class VideosApi {
      * Bulk upsert video audio tracks (asynchronously)
      * Replace all audio tracks with the provided ones using API key authentication
      * @param videoId Video ID (required)
-     * @param files Audio files (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac) (required)
-     * @param languageCodes Comma-separated language codes (required)
-     * @param labels Comma-separated labels (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2084,9 +2045,9 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postVideosVideoIdAudioTracksAsync(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull List<File> files, @javax.annotation.Nonnull String languageCodes, @javax.annotation.Nonnull String labels, final ApiCallback<List<AudioTrack>> _callback) throws ApiException {
+    public okhttp3.Call postVideosVideoIdAudioTracksAsync(@javax.annotation.Nonnull String videoId, final ApiCallback<List<AudioTrack>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postVideosVideoIdAudioTracksValidateBeforeCall(videoId, files, languageCodes, labels, _callback);
+        okhttp3.Call localVarCall = postVideosVideoIdAudioTracksValidateBeforeCall(videoId, _callback);
         Type localVarReturnType = new TypeToken<List<AudioTrack>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -2094,9 +2055,6 @@ public class VideosApi {
     /**
      * Build call for postVideosVideoIdSubtitles
      * @param videoId Video ID (required)
-     * @param files Subtitle files (.srt or .vtt) (required)
-     * @param languageCodes Comma-separated language codes (required)
-     * @param labels Comma-separated labels (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2107,7 +2065,7 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postVideosVideoIdSubtitlesCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull List<File> files, @javax.annotation.Nonnull String languageCodes, @javax.annotation.Nonnull String labels, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call postVideosVideoIdSubtitlesCall(@javax.annotation.Nonnull String videoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2133,18 +2091,6 @@ public class VideosApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (files != null) {
-            localVarFormParams.put("files", files);
-        }
-
-        if (languageCodes != null) {
-            localVarFormParams.put("language_codes", languageCodes);
-        }
-
-        if (labels != null) {
-            localVarFormParams.put("labels", labels);
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2154,6 +2100,7 @@ public class VideosApi {
         }
 
         final String[] localVarContentTypes = {
+            "application/x-www-form-urlencoded",
             "multipart/form-data"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
@@ -2166,28 +2113,13 @@ public class VideosApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call postVideosVideoIdSubtitlesValidateBeforeCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull List<File> files, @javax.annotation.Nonnull String languageCodes, @javax.annotation.Nonnull String labels, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call postVideosVideoIdSubtitlesValidateBeforeCall(@javax.annotation.Nonnull String videoId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'videoId' is set
         if (videoId == null) {
             throw new ApiException("Missing the required parameter 'videoId' when calling postVideosVideoIdSubtitles(Async)");
         }
 
-        // verify the required parameter 'files' is set
-        if (files == null) {
-            throw new ApiException("Missing the required parameter 'files' when calling postVideosVideoIdSubtitles(Async)");
-        }
-
-        // verify the required parameter 'languageCodes' is set
-        if (languageCodes == null) {
-            throw new ApiException("Missing the required parameter 'languageCodes' when calling postVideosVideoIdSubtitles(Async)");
-        }
-
-        // verify the required parameter 'labels' is set
-        if (labels == null) {
-            throw new ApiException("Missing the required parameter 'labels' when calling postVideosVideoIdSubtitles(Async)");
-        }
-
-        return postVideosVideoIdSubtitlesCall(videoId, files, languageCodes, labels, _callback);
+        return postVideosVideoIdSubtitlesCall(videoId, _callback);
 
     }
 
@@ -2195,9 +2127,6 @@ public class VideosApi {
      * Bulk upsert video subtitles
      * Replace all subtitles with the provided ones using API key authentication
      * @param videoId Video ID (required)
-     * @param files Subtitle files (.srt or .vtt) (required)
-     * @param languageCodes Comma-separated language codes (required)
-     * @param labels Comma-separated labels (required)
      * @return List&lt;Subtitle&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2207,8 +2136,8 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public List<Subtitle> postVideosVideoIdSubtitles(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull List<File> files, @javax.annotation.Nonnull String languageCodes, @javax.annotation.Nonnull String labels) throws ApiException {
-        ApiResponse<List<Subtitle>> localVarResp = postVideosVideoIdSubtitlesWithHttpInfo(videoId, files, languageCodes, labels);
+    public List<Subtitle> postVideosVideoIdSubtitles(@javax.annotation.Nonnull String videoId) throws ApiException {
+        ApiResponse<List<Subtitle>> localVarResp = postVideosVideoIdSubtitlesWithHttpInfo(videoId);
         return localVarResp.getData();
     }
 
@@ -2216,9 +2145,6 @@ public class VideosApi {
      * Bulk upsert video subtitles
      * Replace all subtitles with the provided ones using API key authentication
      * @param videoId Video ID (required)
-     * @param files Subtitle files (.srt or .vtt) (required)
-     * @param languageCodes Comma-separated language codes (required)
-     * @param labels Comma-separated labels (required)
      * @return ApiResponse&lt;List&lt;Subtitle&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2228,8 +2154,8 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Subtitle>> postVideosVideoIdSubtitlesWithHttpInfo(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull List<File> files, @javax.annotation.Nonnull String languageCodes, @javax.annotation.Nonnull String labels) throws ApiException {
-        okhttp3.Call localVarCall = postVideosVideoIdSubtitlesValidateBeforeCall(videoId, files, languageCodes, labels, null);
+    public ApiResponse<List<Subtitle>> postVideosVideoIdSubtitlesWithHttpInfo(@javax.annotation.Nonnull String videoId) throws ApiException {
+        okhttp3.Call localVarCall = postVideosVideoIdSubtitlesValidateBeforeCall(videoId, null);
         Type localVarReturnType = new TypeToken<List<Subtitle>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2238,9 +2164,6 @@ public class VideosApi {
      * Bulk upsert video subtitles (asynchronously)
      * Replace all subtitles with the provided ones using API key authentication
      * @param videoId Video ID (required)
-     * @param files Subtitle files (.srt or .vtt) (required)
-     * @param languageCodes Comma-separated language codes (required)
-     * @param labels Comma-separated labels (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2251,9 +2174,9 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call postVideosVideoIdSubtitlesAsync(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull List<File> files, @javax.annotation.Nonnull String languageCodes, @javax.annotation.Nonnull String labels, final ApiCallback<List<Subtitle>> _callback) throws ApiException {
+    public okhttp3.Call postVideosVideoIdSubtitlesAsync(@javax.annotation.Nonnull String videoId, final ApiCallback<List<Subtitle>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = postVideosVideoIdSubtitlesValidateBeforeCall(videoId, files, languageCodes, labels, _callback);
+        okhttp3.Call localVarCall = postVideosVideoIdSubtitlesValidateBeforeCall(videoId, _callback);
         Type localVarReturnType = new TypeToken<List<Subtitle>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -2262,8 +2185,6 @@ public class VideosApi {
      * Build call for putVideosVideoIdAudioTracksLangCode
      * @param videoId Video ID (required)
      * @param langCode Language Code (BCP 47) (required)
-     * @param _file Audio file (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac) (required)
-     * @param label Label (e.g. English) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2274,7 +2195,7 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putVideosVideoIdAudioTracksLangCodeCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String label, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putVideosVideoIdAudioTracksLangCodeCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2301,14 +2222,6 @@ public class VideosApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (_file != null) {
-            localVarFormParams.put("file", _file);
-        }
-
-        if (label != null) {
-            localVarFormParams.put("label", label);
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2318,6 +2231,7 @@ public class VideosApi {
         }
 
         final String[] localVarContentTypes = {
+            "application/x-www-form-urlencoded",
             "multipart/form-data"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
@@ -2330,7 +2244,7 @@ public class VideosApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putVideosVideoIdAudioTracksLangCodeValidateBeforeCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String label, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putVideosVideoIdAudioTracksLangCodeValidateBeforeCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'videoId' is set
         if (videoId == null) {
             throw new ApiException("Missing the required parameter 'videoId' when calling putVideosVideoIdAudioTracksLangCode(Async)");
@@ -2341,12 +2255,7 @@ public class VideosApi {
             throw new ApiException("Missing the required parameter 'langCode' when calling putVideosVideoIdAudioTracksLangCode(Async)");
         }
 
-        // verify the required parameter '_file' is set
-        if (_file == null) {
-            throw new ApiException("Missing the required parameter '_file' when calling putVideosVideoIdAudioTracksLangCode(Async)");
-        }
-
-        return putVideosVideoIdAudioTracksLangCodeCall(videoId, langCode, _file, label, _callback);
+        return putVideosVideoIdAudioTracksLangCodeCall(videoId, langCode, _callback);
 
     }
 
@@ -2355,8 +2264,6 @@ public class VideosApi {
      * Add or replace an audio track for a specific language using API key authentication
      * @param videoId Video ID (required)
      * @param langCode Language Code (BCP 47) (required)
-     * @param _file Audio file (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac) (required)
-     * @param label Label (e.g. English) (optional)
      * @return AudioTrack
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2366,8 +2273,8 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public AudioTrack putVideosVideoIdAudioTracksLangCode(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String label) throws ApiException {
-        ApiResponse<AudioTrack> localVarResp = putVideosVideoIdAudioTracksLangCodeWithHttpInfo(videoId, langCode, _file, label);
+    public AudioTrack putVideosVideoIdAudioTracksLangCode(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode) throws ApiException {
+        ApiResponse<AudioTrack> localVarResp = putVideosVideoIdAudioTracksLangCodeWithHttpInfo(videoId, langCode);
         return localVarResp.getData();
     }
 
@@ -2376,8 +2283,6 @@ public class VideosApi {
      * Add or replace an audio track for a specific language using API key authentication
      * @param videoId Video ID (required)
      * @param langCode Language Code (BCP 47) (required)
-     * @param _file Audio file (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac) (required)
-     * @param label Label (e.g. English) (optional)
      * @return ApiResponse&lt;AudioTrack&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2387,8 +2292,8 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<AudioTrack> putVideosVideoIdAudioTracksLangCodeWithHttpInfo(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String label) throws ApiException {
-        okhttp3.Call localVarCall = putVideosVideoIdAudioTracksLangCodeValidateBeforeCall(videoId, langCode, _file, label, null);
+    public ApiResponse<AudioTrack> putVideosVideoIdAudioTracksLangCodeWithHttpInfo(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode) throws ApiException {
+        okhttp3.Call localVarCall = putVideosVideoIdAudioTracksLangCodeValidateBeforeCall(videoId, langCode, null);
         Type localVarReturnType = new TypeToken<AudioTrack>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2398,8 +2303,6 @@ public class VideosApi {
      * Add or replace an audio track for a specific language using API key authentication
      * @param videoId Video ID (required)
      * @param langCode Language Code (BCP 47) (required)
-     * @param _file Audio file (.mp3, .opus, .flac, .wav, .ac3, .m4a, .aac) (required)
-     * @param label Label (e.g. English) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2410,9 +2313,9 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putVideosVideoIdAudioTracksLangCodeAsync(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String label, final ApiCallback<AudioTrack> _callback) throws ApiException {
+    public okhttp3.Call putVideosVideoIdAudioTracksLangCodeAsync(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, final ApiCallback<AudioTrack> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = putVideosVideoIdAudioTracksLangCodeValidateBeforeCall(videoId, langCode, _file, label, _callback);
+        okhttp3.Call localVarCall = putVideosVideoIdAudioTracksLangCodeValidateBeforeCall(videoId, langCode, _callback);
         Type localVarReturnType = new TypeToken<AudioTrack>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -2420,7 +2323,7 @@ public class VideosApi {
     /**
      * Build call for putVideosVideoIdChapters
      * @param videoId Video ID (required)
-     * @param request Chapters array (required)
+     * @param putVideosVideoIdChaptersRequest Chapters array (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2436,7 +2339,7 @@ public class VideosApi {
         <tr><td> 500 </td><td> Failed to update chapters </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putVideosVideoIdChaptersCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull UpdateChaptersRequest request, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putVideosVideoIdChaptersCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull PutVideosVideoIdChaptersRequest putVideosVideoIdChaptersRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2450,7 +2353,7 @@ public class VideosApi {
             basePath = null;
         }
 
-        Object localVarPostBody = request;
+        Object localVarPostBody = putVideosVideoIdChaptersRequest;
 
         // create path and map variables
         String localVarPath = "/videos/{videoId}/chapters"
@@ -2483,18 +2386,18 @@ public class VideosApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putVideosVideoIdChaptersValidateBeforeCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull UpdateChaptersRequest request, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putVideosVideoIdChaptersValidateBeforeCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull PutVideosVideoIdChaptersRequest putVideosVideoIdChaptersRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'videoId' is set
         if (videoId == null) {
             throw new ApiException("Missing the required parameter 'videoId' when calling putVideosVideoIdChapters(Async)");
         }
 
-        // verify the required parameter 'request' is set
-        if (request == null) {
-            throw new ApiException("Missing the required parameter 'request' when calling putVideosVideoIdChapters(Async)");
+        // verify the required parameter 'putVideosVideoIdChaptersRequest' is set
+        if (putVideosVideoIdChaptersRequest == null) {
+            throw new ApiException("Missing the required parameter 'putVideosVideoIdChaptersRequest' when calling putVideosVideoIdChapters(Async)");
         }
 
-        return putVideosVideoIdChaptersCall(videoId, request, _callback);
+        return putVideosVideoIdChaptersCall(videoId, putVideosVideoIdChaptersRequest, _callback);
 
     }
 
@@ -2502,7 +2405,7 @@ public class VideosApi {
      * Update video chapters
      * Replace all chapters for a video (atomic PUT operation) using API key authentication
      * @param videoId Video ID (required)
-     * @param request Chapters array (required)
+     * @param putVideosVideoIdChaptersRequest Chapters array (required)
      * @return UpdateChaptersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2517,8 +2420,8 @@ public class VideosApi {
         <tr><td> 500 </td><td> Failed to update chapters </td><td>  -  </td></tr>
      </table>
      */
-    public UpdateChaptersResponse putVideosVideoIdChapters(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull UpdateChaptersRequest request) throws ApiException {
-        ApiResponse<UpdateChaptersResponse> localVarResp = putVideosVideoIdChaptersWithHttpInfo(videoId, request);
+    public UpdateChaptersResponse putVideosVideoIdChapters(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull PutVideosVideoIdChaptersRequest putVideosVideoIdChaptersRequest) throws ApiException {
+        ApiResponse<UpdateChaptersResponse> localVarResp = putVideosVideoIdChaptersWithHttpInfo(videoId, putVideosVideoIdChaptersRequest);
         return localVarResp.getData();
     }
 
@@ -2526,7 +2429,7 @@ public class VideosApi {
      * Update video chapters
      * Replace all chapters for a video (atomic PUT operation) using API key authentication
      * @param videoId Video ID (required)
-     * @param request Chapters array (required)
+     * @param putVideosVideoIdChaptersRequest Chapters array (required)
      * @return ApiResponse&lt;UpdateChaptersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2541,8 +2444,8 @@ public class VideosApi {
         <tr><td> 500 </td><td> Failed to update chapters </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<UpdateChaptersResponse> putVideosVideoIdChaptersWithHttpInfo(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull UpdateChaptersRequest request) throws ApiException {
-        okhttp3.Call localVarCall = putVideosVideoIdChaptersValidateBeforeCall(videoId, request, null);
+    public ApiResponse<UpdateChaptersResponse> putVideosVideoIdChaptersWithHttpInfo(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull PutVideosVideoIdChaptersRequest putVideosVideoIdChaptersRequest) throws ApiException {
+        okhttp3.Call localVarCall = putVideosVideoIdChaptersValidateBeforeCall(videoId, putVideosVideoIdChaptersRequest, null);
         Type localVarReturnType = new TypeToken<UpdateChaptersResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2551,7 +2454,7 @@ public class VideosApi {
      * Update video chapters (asynchronously)
      * Replace all chapters for a video (atomic PUT operation) using API key authentication
      * @param videoId Video ID (required)
-     * @param request Chapters array (required)
+     * @param putVideosVideoIdChaptersRequest Chapters array (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2567,9 +2470,9 @@ public class VideosApi {
         <tr><td> 500 </td><td> Failed to update chapters </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putVideosVideoIdChaptersAsync(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull UpdateChaptersRequest request, final ApiCallback<UpdateChaptersResponse> _callback) throws ApiException {
+    public okhttp3.Call putVideosVideoIdChaptersAsync(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull PutVideosVideoIdChaptersRequest putVideosVideoIdChaptersRequest, final ApiCallback<UpdateChaptersResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = putVideosVideoIdChaptersValidateBeforeCall(videoId, request, _callback);
+        okhttp3.Call localVarCall = putVideosVideoIdChaptersValidateBeforeCall(videoId, putVideosVideoIdChaptersRequest, _callback);
         Type localVarReturnType = new TypeToken<UpdateChaptersResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -2578,8 +2481,6 @@ public class VideosApi {
      * Build call for putVideosVideoIdSubtitlesLangCode
      * @param videoId Video ID (required)
      * @param langCode Language Code (BCP 47) (required)
-     * @param _file Subtitle file (.srt or .vtt) (required)
-     * @param label Label (e.g. English) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2590,7 +2491,7 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putVideosVideoIdSubtitlesLangCodeCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String label, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putVideosVideoIdSubtitlesLangCodeCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2617,14 +2518,6 @@ public class VideosApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (_file != null) {
-            localVarFormParams.put("file", _file);
-        }
-
-        if (label != null) {
-            localVarFormParams.put("label", label);
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2634,6 +2527,7 @@ public class VideosApi {
         }
 
         final String[] localVarContentTypes = {
+            "application/x-www-form-urlencoded",
             "multipart/form-data"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
@@ -2646,7 +2540,7 @@ public class VideosApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putVideosVideoIdSubtitlesLangCodeValidateBeforeCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String label, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putVideosVideoIdSubtitlesLangCodeValidateBeforeCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'videoId' is set
         if (videoId == null) {
             throw new ApiException("Missing the required parameter 'videoId' when calling putVideosVideoIdSubtitlesLangCode(Async)");
@@ -2657,12 +2551,7 @@ public class VideosApi {
             throw new ApiException("Missing the required parameter 'langCode' when calling putVideosVideoIdSubtitlesLangCode(Async)");
         }
 
-        // verify the required parameter '_file' is set
-        if (_file == null) {
-            throw new ApiException("Missing the required parameter '_file' when calling putVideosVideoIdSubtitlesLangCode(Async)");
-        }
-
-        return putVideosVideoIdSubtitlesLangCodeCall(videoId, langCode, _file, label, _callback);
+        return putVideosVideoIdSubtitlesLangCodeCall(videoId, langCode, _callback);
 
     }
 
@@ -2671,8 +2560,6 @@ public class VideosApi {
      * Add or replace a subtitle for a specific language using API key authentication
      * @param videoId Video ID (required)
      * @param langCode Language Code (BCP 47) (required)
-     * @param _file Subtitle file (.srt or .vtt) (required)
-     * @param label Label (e.g. English) (optional)
      * @return Subtitle
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2682,8 +2569,8 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public Subtitle putVideosVideoIdSubtitlesLangCode(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String label) throws ApiException {
-        ApiResponse<Subtitle> localVarResp = putVideosVideoIdSubtitlesLangCodeWithHttpInfo(videoId, langCode, _file, label);
+    public Subtitle putVideosVideoIdSubtitlesLangCode(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode) throws ApiException {
+        ApiResponse<Subtitle> localVarResp = putVideosVideoIdSubtitlesLangCodeWithHttpInfo(videoId, langCode);
         return localVarResp.getData();
     }
 
@@ -2692,8 +2579,6 @@ public class VideosApi {
      * Add or replace a subtitle for a specific language using API key authentication
      * @param videoId Video ID (required)
      * @param langCode Language Code (BCP 47) (required)
-     * @param _file Subtitle file (.srt or .vtt) (required)
-     * @param label Label (e.g. English) (optional)
      * @return ApiResponse&lt;Subtitle&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2703,8 +2588,8 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Subtitle> putVideosVideoIdSubtitlesLangCodeWithHttpInfo(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String label) throws ApiException {
-        okhttp3.Call localVarCall = putVideosVideoIdSubtitlesLangCodeValidateBeforeCall(videoId, langCode, _file, label, null);
+    public ApiResponse<Subtitle> putVideosVideoIdSubtitlesLangCodeWithHttpInfo(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode) throws ApiException {
+        okhttp3.Call localVarCall = putVideosVideoIdSubtitlesLangCodeValidateBeforeCall(videoId, langCode, null);
         Type localVarReturnType = new TypeToken<Subtitle>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2714,8 +2599,6 @@ public class VideosApi {
      * Add or replace a subtitle for a specific language using API key authentication
      * @param videoId Video ID (required)
      * @param langCode Language Code (BCP 47) (required)
-     * @param _file Subtitle file (.srt or .vtt) (required)
-     * @param label Label (e.g. English) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2726,9 +2609,9 @@ public class VideosApi {
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putVideosVideoIdSubtitlesLangCodeAsync(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String label, final ApiCallback<Subtitle> _callback) throws ApiException {
+    public okhttp3.Call putVideosVideoIdSubtitlesLangCodeAsync(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull String langCode, final ApiCallback<Subtitle> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = putVideosVideoIdSubtitlesLangCodeValidateBeforeCall(videoId, langCode, _file, label, _callback);
+        okhttp3.Call localVarCall = putVideosVideoIdSubtitlesLangCodeValidateBeforeCall(videoId, langCode, _callback);
         Type localVarReturnType = new TypeToken<Subtitle>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -2736,7 +2619,6 @@ public class VideosApi {
     /**
      * Build call for putVideosVideoIdThumbnail
      * @param videoId Video ID (required)
-     * @param thumbnail Thumbnail image file (max 5MB, image/_*) (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -2752,7 +2634,7 @@ public class VideosApi {
         <tr><td> 500 </td><td> Upload or update failed </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putVideosVideoIdThumbnailCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull File thumbnail, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call putVideosVideoIdThumbnailCall(@javax.annotation.Nonnull String videoId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2778,10 +2660,6 @@ public class VideosApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (thumbnail != null) {
-            localVarFormParams.put("thumbnail", thumbnail);
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2791,6 +2669,7 @@ public class VideosApi {
         }
 
         final String[] localVarContentTypes = {
+            "application/x-www-form-urlencoded",
             "multipart/form-data"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
@@ -2803,18 +2682,13 @@ public class VideosApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call putVideosVideoIdThumbnailValidateBeforeCall(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull File thumbnail, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call putVideosVideoIdThumbnailValidateBeforeCall(@javax.annotation.Nonnull String videoId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'videoId' is set
         if (videoId == null) {
             throw new ApiException("Missing the required parameter 'videoId' when calling putVideosVideoIdThumbnail(Async)");
         }
 
-        // verify the required parameter 'thumbnail' is set
-        if (thumbnail == null) {
-            throw new ApiException("Missing the required parameter 'thumbnail' when calling putVideosVideoIdThumbnail(Async)");
-        }
-
-        return putVideosVideoIdThumbnailCall(videoId, thumbnail, _callback);
+        return putVideosVideoIdThumbnailCall(videoId, _callback);
 
     }
 
@@ -2822,7 +2696,6 @@ public class VideosApi {
      * Update video thumbnail
      * Update the thumbnail image for an existing video using API key authentication
      * @param videoId Video ID (required)
-     * @param thumbnail Thumbnail image file (max 5MB, image/_*) (required)
      * @return Video
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2837,8 +2710,8 @@ public class VideosApi {
         <tr><td> 500 </td><td> Upload or update failed </td><td>  -  </td></tr>
      </table>
      */
-    public Video putVideosVideoIdThumbnail(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull File thumbnail) throws ApiException {
-        ApiResponse<Video> localVarResp = putVideosVideoIdThumbnailWithHttpInfo(videoId, thumbnail);
+    public Video putVideosVideoIdThumbnail(@javax.annotation.Nonnull String videoId) throws ApiException {
+        ApiResponse<Video> localVarResp = putVideosVideoIdThumbnailWithHttpInfo(videoId);
         return localVarResp.getData();
     }
 
@@ -2846,7 +2719,6 @@ public class VideosApi {
      * Update video thumbnail
      * Update the thumbnail image for an existing video using API key authentication
      * @param videoId Video ID (required)
-     * @param thumbnail Thumbnail image file (max 5MB, image/_*) (required)
      * @return ApiResponse&lt;Video&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -2861,8 +2733,8 @@ public class VideosApi {
         <tr><td> 500 </td><td> Upload or update failed </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Video> putVideosVideoIdThumbnailWithHttpInfo(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull File thumbnail) throws ApiException {
-        okhttp3.Call localVarCall = putVideosVideoIdThumbnailValidateBeforeCall(videoId, thumbnail, null);
+    public ApiResponse<Video> putVideosVideoIdThumbnailWithHttpInfo(@javax.annotation.Nonnull String videoId) throws ApiException {
+        okhttp3.Call localVarCall = putVideosVideoIdThumbnailValidateBeforeCall(videoId, null);
         Type localVarReturnType = new TypeToken<Video>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2871,7 +2743,6 @@ public class VideosApi {
      * Update video thumbnail (asynchronously)
      * Update the thumbnail image for an existing video using API key authentication
      * @param videoId Video ID (required)
-     * @param thumbnail Thumbnail image file (max 5MB, image/_*) (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2887,9 +2758,9 @@ public class VideosApi {
         <tr><td> 500 </td><td> Upload or update failed </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call putVideosVideoIdThumbnailAsync(@javax.annotation.Nonnull String videoId, @javax.annotation.Nonnull File thumbnail, final ApiCallback<Video> _callback) throws ApiException {
+    public okhttp3.Call putVideosVideoIdThumbnailAsync(@javax.annotation.Nonnull String videoId, final ApiCallback<Video> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = putVideosVideoIdThumbnailValidateBeforeCall(videoId, thumbnail, _callback);
+        okhttp3.Call localVarCall = putVideosVideoIdThumbnailValidateBeforeCall(videoId, _callback);
         Type localVarReturnType = new TypeToken<Video>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
