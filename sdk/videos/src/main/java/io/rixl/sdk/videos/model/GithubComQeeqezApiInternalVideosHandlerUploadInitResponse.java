@@ -34,7 +34,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   GithubComQeeqezApiInternalVideosHandlerUploadInitResponse.JSON_PROPERTY_VIDEO_PRESIGNED_URL
 })
 @JsonTypeName("github_com_qeeqez_api_internal_videos_handler_upload.InitResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T11:50:49.332099+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T12:02:38.096253+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
 public class GithubComQeeqezApiInternalVideosHandlerUploadInitResponse {
   public static final String JSON_PROPERTY_POSTER_ID = "poster_id";
   @javax.annotation.Nullable

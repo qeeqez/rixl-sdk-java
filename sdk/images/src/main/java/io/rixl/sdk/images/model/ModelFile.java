@@ -39,7 +39,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   ModelFile.JSON_PROPERTY_URL
 })
 @JsonTypeName("File")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T11:50:51.501971+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T12:02:40.116555+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
 public class ModelFile {
   public static final String JSON_PROPERTY_CREATED_AT = "created_at";
   @javax.annotation.Nullable

@@ -33,7 +33,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Chapter.JSON_PROPERTY_START_TIME_SEC,
   Chapter.JSON_PROPERTY_TITLE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T11:50:49.332099+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T12:02:38.096253+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
 public class Chapter {
   public static final String JSON_PROPERTY_DURATION_LABEL = "duration_label";
   @javax.annotation.Nullable

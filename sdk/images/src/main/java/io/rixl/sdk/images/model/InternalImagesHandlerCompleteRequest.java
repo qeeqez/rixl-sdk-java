@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   InternalImagesHandlerCompleteRequest.JSON_PROPERTY_IMAGE_ID
 })
 @JsonTypeName("internal_images_handler.completeRequest")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T11:50:51.501971+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T12:02:40.116555+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
 public class InternalImagesHandlerCompleteRequest {
   public static final String JSON_PROPERTY_ATTACHED_TO_VIDEO = "attached_to_video";
   @javax.annotation.Nullable

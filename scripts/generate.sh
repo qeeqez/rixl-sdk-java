@@ -122,7 +122,10 @@ for service in "${services[@]}"; do
 		"${service_tmp}/gradlew" \
 		"${service_tmp}/gradlew.bat" \
 		"${service_tmp}/settings.gradle" \
-		"${service_tmp}/src/main/AndroidManifest.xml"
+		"${service_tmp}/src/main/AndroidManifest.xml" \
+		"${service_tmp}/README.md" \
+		"${service_tmp}/.gitignore" \
+		"${service_tmp}/.openapi-generator-ignore"
 
 	mkdir -p "${output_dir}"
 	rsync -a --delete \

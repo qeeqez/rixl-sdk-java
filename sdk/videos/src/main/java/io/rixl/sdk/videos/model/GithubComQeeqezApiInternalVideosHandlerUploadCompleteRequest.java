@@ -30,7 +30,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest.JSON_PROPERTY_VIDEO_ID
 })
 @JsonTypeName("github_com_qeeqez_api_internal_videos_handler_upload.CompleteRequest")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T11:50:49.332099+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T12:02:38.096253+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
 public class GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest {
   public static final String JSON_PROPERTY_VIDEO_ID = "video_id";
   @javax.annotation.Nullable

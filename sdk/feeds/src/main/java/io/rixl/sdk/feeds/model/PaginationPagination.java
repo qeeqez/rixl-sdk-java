@@ -32,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   PaginationPagination.JSON_PROPERTY_TOTAL
 })
 @JsonTypeName("pagination.Pagination")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T11:50:47.218864+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T12:02:33.966252+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
 public class PaginationPagination {
   public static final String JSON_PROPERTY_LIMIT = "limit";
   @javax.annotation.Nullable
