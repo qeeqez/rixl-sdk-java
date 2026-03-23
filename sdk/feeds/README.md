@@ -4,7 +4,7 @@ RIXL API
 
 - API version: 2.0
 
-- Build date: 2026-03-23T11:10:31.860620+01:00[Africa/Lagos]
+- Build date: 2026-03-23T11:50:47.218864+01:00[Africa/Lagos]
 
 - Generator version: 7.20.0
 
@@ -130,35 +130,17 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [AudioTrack](docs/AudioTrack.md)
- - [AudioTrackDelete](docs/AudioTrackDelete.md)
  - [Chapter](docs/Chapter.md)
  - [FileStatus](docs/FileStatus.md)
  - [GithubComQeeqezApiDbSqlcPlanType](docs/GithubComQeeqezApiDbSqlcPlanType.md)
- - [GithubComQeeqezApiDbSqlcVideoQuality](docs/GithubComQeeqezApiDbSqlcVideoQuality.md)
  - [GithubComQeeqezApiInternalErrorsErrorResponse](docs/GithubComQeeqezApiInternalErrorsErrorResponse.md)
- - [GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest](docs/GithubComQeeqezApiInternalVideosHandlerUploadCompleteRequest.md)
- - [GithubComQeeqezApiInternalVideosHandlerUploadInitResponse](docs/GithubComQeeqezApiInternalVideosHandlerUploadInitResponse.md)
- - [GithubComQeeqezApiInternalVideosTypesChapterInput](docs/GithubComQeeqezApiInternalVideosTypesChapterInput.md)
  - [GithubComQeeqezApiInternalVideosVideoResponse](docs/GithubComQeeqezApiInternalVideosVideoResponse.md)
  - [Image](docs/Image.md)
- - [InternalImagesHandlerCompleteRequest](docs/InternalImagesHandlerCompleteRequest.md)
- - [InternalImagesHandlerInitResponse](docs/InternalImagesHandlerInitResponse.md)
- - [InternalImagesHandlerUploadInitRequest](docs/InternalImagesHandlerUploadInitRequest.md)
- - [InternalVideosHandlerSubtitlesLanguageResponse](docs/InternalVideosHandlerSubtitlesLanguageResponse.md)
  - [ModelFile](docs/ModelFile.md)
- - [PaginationPaginatedResponseImage](docs/PaginationPaginatedResponseImage.md)
  - [PaginationPaginatedResponsePost](docs/PaginationPaginatedResponsePost.md)
- - [PaginationPaginatedResponseVideo](docs/PaginationPaginatedResponseVideo.md)
  - [PaginationPagination](docs/PaginationPagination.md)
  - [Post](docs/Post.md)
  - [PostType](docs/PostType.md)
- - [Subtitle](docs/Subtitle.md)
- - [SubtitleDelete](docs/SubtitleDelete.md)
- - [UpdateChaptersRequest](docs/UpdateChaptersRequest.md)
- - [UpdateChaptersResponse](docs/UpdateChaptersResponse.md)
- - [Video](docs/Video.md)
- - [VideoUploadInitRequest](docs/VideoUploadInitRequest.md)
 
 
 <a id="documentation-for-authorization"></a>

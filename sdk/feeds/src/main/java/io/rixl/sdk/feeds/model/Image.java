@@ -35,7 +35,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   Image.JSON_PROPERTY_THUMBHASH,
   Image.JSON_PROPERTY_WIDTH
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T11:10:31.860620+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T11:50:47.218864+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
 public class Image {
   public static final String JSON_PROPERTY_ATTACHED_TO_VIDEO = "attached_to_video";
   @javax.annotation.Nullable

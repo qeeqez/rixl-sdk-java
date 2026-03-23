@@ -32,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   GithubComQeeqezApiInternalVideosTypesChapterInput.JSON_PROPERTY_TITLE
 })
 @JsonTypeName("github_com_qeeqez_api_internal_videos_types.ChapterInput")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T11:10:33.968578+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T11:50:49.332099+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
 public class GithubComQeeqezApiInternalVideosTypesChapterInput {
   public static final String JSON_PROPERTY_START_TIME_SEC = "start_time_sec";
   @javax.annotation.Nullable

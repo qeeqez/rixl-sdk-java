@@ -32,7 +32,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   VideoUploadInitRequest.JSON_PROPERTY_IMAGE_FORMAT,
   VideoUploadInitRequest.JSON_PROPERTY_VIDEO_QUALITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T11:10:33.968578+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T11:50:49.332099+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
 public class VideoUploadInitRequest {
   public static final String JSON_PROPERTY_FILE_NAME = "file_name";
   @javax.annotation.Nonnull

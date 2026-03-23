@@ -91,10 +91,10 @@ if [[ -n "${service_arg}" ]]; then
 	services=("${service_arg}")
 fi
 
-mkdir -p "${ROOT_DIR}/sdk"
+mkdir -p "${ROOT_DIR}/sdk" "${ROOT_DIR}/openapi/services"
 
 for service in "${services[@]}"; do
-	service_spec="${TMP_DIR}/${service}.swagger.json"
+	service_spec="${ROOT_DIR}/openapi/services/${service}.swagger.json"
 	service_tmp="${TMP_DIR}/out-${service}"
 	output_dir="${ROOT_DIR}/sdk/${service}"
 
@@ -109,8 +109,20 @@ for service in "${services[@]}"; do
 
 	perl -0pi -e 's{http://localhost}{https://api.rixl.com}g; s{https://github.com/openapitools/openapi-generator}{https://github.com/qeeqez/rixl-sdk-java}g; s{git@github.com:openapitools/openapi-generator\.git}{git@github.com:qeeqez/rixl-sdk-java.git}g' "${service_tmp}/README.md" "${service_tmp}/pom.xml"
 
-	rm -rf "${service_tmp}/.openapi-generator" "${service_tmp}/api"
-	rm -f "${service_tmp}/.travis.yml" "${service_tmp}/git_push.sh"
+	rm -rf \
+		"${service_tmp}/.openapi-generator" \
+		"${service_tmp}/api" \
+		"${service_tmp}/gradle"
+	rm -f \
+		"${service_tmp}/.travis.yml" \
+		"${service_tmp}/git_push.sh" \
+		"${service_tmp}/build.gradle" \
+		"${service_tmp}/build.sbt" \
+		"${service_tmp}/gradle.properties" \
+		"${service_tmp}/gradlew" \
+		"${service_tmp}/gradlew.bat" \
+		"${service_tmp}/settings.gradle" \
+		"${service_tmp}/src/main/AndroidManifest.xml"
 
 	mkdir -p "${output_dir}"
 	rsync -a --delete \

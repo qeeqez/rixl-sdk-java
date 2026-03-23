@@ -49,7 +49,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
   GithubComQeeqezApiInternalVideosVideoResponse.JSON_PROPERTY_WIDTH
 })
 @JsonTypeName("github_com_qeeqez_api_internal_videos.VideoResponse")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T11:10:31.860620+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-23T11:50:47.218864+01:00[Africa/Lagos]", comments = "Generator version: 7.20.0")
 public class GithubComQeeqezApiInternalVideosVideoResponse {
   public static final String JSON_PROPERTY_BITRATE = "bitrate";
   @javax.annotation.Nullable
