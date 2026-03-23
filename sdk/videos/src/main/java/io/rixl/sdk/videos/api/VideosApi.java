@@ -1154,10 +1154,10 @@ public class VideosApi extends BaseApi {
     }
     /**
      * Update video thumbnail
-     * Update the thumbnail image for an existing video
+     * Update the thumbnail image for an existing video using API key authentication
      * <p><b>200</b> - Video with updated thumbnail
      * <p><b>400</b> - Invalid file or request
-     * <p><b>401</b> - Unauthorized
+     * <p><b>401</b> - Unauthorized - Invalid API key
      * <p><b>403</b> - Access denied
      * <p><b>404</b> - Video not found
      * <p><b>500</b> - Upload or update failed
@@ -1172,10 +1172,10 @@ public class VideosApi extends BaseApi {
 
     /**
      * Update video thumbnail
-     * Update the thumbnail image for an existing video
+     * Update the thumbnail image for an existing video using API key authentication
      * <p><b>200</b> - Video with updated thumbnail
      * <p><b>400</b> - Invalid file or request
-     * <p><b>401</b> - Unauthorized
+     * <p><b>401</b> - Unauthorized - Invalid API key
      * <p><b>403</b> - Access denied
      * <p><b>404</b> - Video not found
      * <p><b>500</b> - Upload or update failed
@@ -1218,7 +1218,7 @@ public class VideosApi extends BaseApi {
          };
         final MediaType localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth" };
 
         ParameterizedTypeReference<Video> localReturnType = new ParameterizedTypeReference<Video>() {};
         return apiClient.invokeAPI("/videos/{videoId}/thumbnail", HttpMethod.PUT, uriVariables, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localReturnType);
@@ -1244,7 +1244,7 @@ public class VideosApi extends BaseApi {
          };
         final MediaType localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth" };
 
         return apiClient.invokeAPI(localVarPath, method, uriVariables, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, returnType);
     }
