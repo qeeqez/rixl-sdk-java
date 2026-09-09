@@ -3,7 +3,6 @@ package com.rixl.sdk.models.billing.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -12,7 +11,7 @@ public class CalculateGenericTaxRequest implements Parsable {
     /**
      * The amount property
      */
-    private UntypedNode amount;
+    private Long amount;
     /**
      * The billing_address property
      */
@@ -41,10 +40,10 @@ public class CalculateGenericTaxRequest implements Parsable {
     }
     /**
      * Gets the amount property value. The amount property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getAmount() {
+    public Long getAmount() {
         return this.amount;
     }
     /**
@@ -70,7 +69,7 @@ public class CalculateGenericTaxRequest implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
-        deserializerMap.put("amount", (n) -> { this.setAmount(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("amount", (n) -> { this.setAmount(n.getLongValue()); });
         deserializerMap.put("billing_address", (n) -> { this.setBillingAddress(n.getObjectValue(BillingAddress::createFromDiscriminatorValue)); });
         deserializerMap.put("currency", (n) -> { this.setCurrency(n.getStringValue()); });
         deserializerMap.put("line_items", (n) -> { this.setLineItems(n.getCollectionOfObjectValues(TaxLineItem::createFromDiscriminatorValue)); });
@@ -99,7 +98,7 @@ public class CalculateGenericTaxRequest implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeObjectValue("amount", this.getAmount());
+        writer.writeLongValue("amount", this.getAmount());
         writer.writeObjectValue("billing_address", this.getBillingAddress());
         writer.writeStringValue("currency", this.getCurrency());
         writer.writeCollectionOfObjectValues("line_items", this.getLineItems());
@@ -109,7 +108,7 @@ public class CalculateGenericTaxRequest implements Parsable {
      * Sets the amount property value. The amount property
      * @param value Value to set for the amount property.
      */
-    public void setAmount(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setAmount(@jakarta.annotation.Nullable final Long value) {
         this.amount = value;
     }
     /**

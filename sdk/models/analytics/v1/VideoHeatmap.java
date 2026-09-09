@@ -3,7 +3,6 @@ package com.rixl.sdk.models.analytics.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public class VideoHeatmap implements Parsable {
     /**
      * The total_duration_ms property
      */
-    private UntypedNode totalDurationMs;
+    private Long totalDurationMs;
     /**
      * The video_id property
      */
@@ -47,16 +46,16 @@ public class VideoHeatmap implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("data", (n) -> { this.setData(n.getCollectionOfPrimitiveValues(Double.class)); });
-        deserializerMap.put("total_duration_ms", (n) -> { this.setTotalDurationMs(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("total_duration_ms", (n) -> { this.setTotalDurationMs(n.getLongValue()); });
         deserializerMap.put("video_id", (n) -> { this.setVideoId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
      * Gets the total_duration_ms property value. The total_duration_ms property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getTotalDurationMs() {
+    public Long getTotalDurationMs() {
         return this.totalDurationMs;
     }
     /**
@@ -74,7 +73,7 @@ public class VideoHeatmap implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeCollectionOfPrimitiveValues("data", this.getData());
-        writer.writeObjectValue("total_duration_ms", this.getTotalDurationMs());
+        writer.writeLongValue("total_duration_ms", this.getTotalDurationMs());
         writer.writeStringValue("video_id", this.getVideoId());
     }
     /**
@@ -88,7 +87,7 @@ public class VideoHeatmap implements Parsable {
      * Sets the total_duration_ms property value. The total_duration_ms property
      * @param value Value to set for the total_duration_ms property.
      */
-    public void setTotalDurationMs(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setTotalDurationMs(@jakarta.annotation.Nullable final Long value) {
         this.totalDurationMs = value;
     }
     /**

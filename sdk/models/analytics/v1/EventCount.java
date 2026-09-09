@@ -3,7 +3,6 @@ package com.rixl.sdk.models.analytics.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -12,7 +11,7 @@ public class EventCount implements Parsable {
     /**
      * The count property
      */
-    private UntypedNode count;
+    private Long count;
     /**
      * The event_type property
      */
@@ -29,10 +28,10 @@ public class EventCount implements Parsable {
     }
     /**
      * Gets the count property value. The count property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getCount() {
+    public Long getCount() {
         return this.count;
     }
     /**
@@ -50,7 +49,7 @@ public class EventCount implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
-        deserializerMap.put("count", (n) -> { this.setCount(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("count", (n) -> { this.setCount(n.getLongValue()); });
         deserializerMap.put("event_type", (n) -> { this.setEventType(n.getStringValue()); });
         return deserializerMap;
     }
@@ -60,14 +59,14 @@ public class EventCount implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeObjectValue("count", this.getCount());
+        writer.writeLongValue("count", this.getCount());
         writer.writeStringValue("event_type", this.getEventType());
     }
     /**
      * Sets the count property value. The count property
      * @param value Value to set for the count property.
      */
-    public void setCount(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setCount(@jakarta.annotation.Nullable final Long value) {
         this.count = value;
     }
     /**

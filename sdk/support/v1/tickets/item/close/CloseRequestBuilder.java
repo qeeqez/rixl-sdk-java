@@ -36,47 +36,40 @@ public class CloseRequestBuilder extends BaseRequestBuilder {
     }
     /**
      * CloseTicket
-     * @param body The request body
      * @return a {@link CloseTicketResponse}
      */
     @jakarta.annotation.Nullable
-    public CloseTicketResponse post(@jakarta.annotation.Nonnull final ClosePostRequestBody body) {
-        return post(body, null);
+    public CloseTicketResponse post() {
+        return post(null);
     }
     /**
      * CloseTicket
-     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link CloseTicketResponse}
      */
     @jakarta.annotation.Nullable
-    public CloseTicketResponse post(@jakarta.annotation.Nonnull final ClosePostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
-        Objects.requireNonNull(body);
-        final RequestInformation requestInfo = toPostRequestInformation(body, requestConfiguration);
+    public CloseTicketResponse post(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
+        final RequestInformation requestInfo = toPostRequestInformation(requestConfiguration);
         return this.requestAdapter.send(requestInfo, null, CloseTicketResponse::createFromDiscriminatorValue);
     }
     /**
      * CloseTicket
-     * @param body The request body
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ClosePostRequestBody body) {
-        return toPostRequestInformation(body, null);
+    public RequestInformation toPostRequestInformation() {
+        return toPostRequestInformation(null);
     }
     /**
      * CloseTicket
-     * @param body The request body
      * @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
      * @return a {@link RequestInformation}
      */
     @jakarta.annotation.Nonnull
-    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nonnull final ClosePostRequestBody body, @jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
-        Objects.requireNonNull(body);
+    public RequestInformation toPostRequestInformation(@jakarta.annotation.Nullable final java.util.function.Consumer<PostRequestConfiguration> requestConfiguration) {
         final RequestInformation requestInfo = new RequestInformation(HttpMethod.POST, urlTemplate, pathParameters);
         requestInfo.configure(requestConfiguration, PostRequestConfiguration::new);
         requestInfo.headers.tryAdd("Accept", "application/json");
-        requestInfo.setContentFromParsable(requestAdapter, "application/json", body);
         return requestInfo;
     }
     /**

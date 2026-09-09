@@ -3,7 +3,6 @@ package com.rixl.sdk.models.common.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +32,7 @@ public class File implements Parsable {
     /**
      * size is the uploaded source&apos;s byte size for usage accounting; it is not updated when packaging replaces the artifact, so it does not describe the object at url.
      */
-    private UntypedNode size;
+    private Long size;
     /**
      * The status property
      */
@@ -76,7 +75,7 @@ public class File implements Parsable {
         deserializerMap.put("id", (n) -> { this.setId(n.getStringValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
-        deserializerMap.put("size", (n) -> { this.setSize(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("size", (n) -> { this.setSize(n.getLongValue()); });
         deserializerMap.put("status", (n) -> { this.setStatus(n.getEnumValue(FileStatus::forValue)); });
         deserializerMap.put("updated_at", (n) -> { this.setUpdatedAt(n.getOffsetDateTimeValue()); });
         deserializerMap.put("url", (n) -> { this.setUrl(n.getStringValue()); });
@@ -116,10 +115,10 @@ public class File implements Parsable {
     }
     /**
      * Gets the size property value. size is the uploaded source&apos;s byte size for usage accounting; it is not updated when packaging replaces the artifact, so it does not describe the object at url.
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getSize() {
+    public Long getSize() {
         return this.size;
     }
     /**
@@ -157,7 +156,7 @@ public class File implements Parsable {
         writer.writeStringValue("id", this.getId());
         writer.writeStringValue("name", this.getName());
         writer.writeStringValue("project_id", this.getProjectId());
-        writer.writeObjectValue("size", this.getSize());
+        writer.writeLongValue("size", this.getSize());
         writer.writeEnumValue("status", this.getStatus());
         writer.writeOffsetDateTimeValue("updated_at", this.getUpdatedAt());
         writer.writeStringValue("url", this.getUrl());
@@ -201,7 +200,7 @@ public class File implements Parsable {
      * Sets the size property value. size is the uploaded source&apos;s byte size for usage accounting; it is not updated when packaging replaces the artifact, so it does not describe the object at url.
      * @param value Value to set for the size property.
      */
-    public void setSize(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setSize(@jakarta.annotation.Nullable final Long value) {
         this.size = value;
     }
     /**

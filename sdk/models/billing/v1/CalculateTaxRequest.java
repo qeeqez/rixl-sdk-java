@@ -3,7 +3,6 @@ package com.rixl.sdk.models.billing.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -28,7 +27,7 @@ public class CalculateTaxRequest implements Parsable {
     /**
      * The interval_count property
      */
-    private UntypedNode intervalCount;
+    private Long intervalCount;
     /**
      * The line_items property
      */
@@ -102,7 +101,7 @@ public class CalculateTaxRequest implements Parsable {
         deserializerMap.put("billing_address", (n) -> { this.setBillingAddress(n.getObjectValue(BillingAddress::createFromDiscriminatorValue)); });
         deserializerMap.put("billing_cycle", (n) -> { this.setBillingCycle(n.getEnumValue(BillingCycle::forValue)); });
         deserializerMap.put("currency", (n) -> { this.setCurrency(n.getStringValue()); });
-        deserializerMap.put("interval_count", (n) -> { this.setIntervalCount(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("interval_count", (n) -> { this.setIntervalCount(n.getLongValue()); });
         deserializerMap.put("line_items", (n) -> { this.setLineItems(n.getCollectionOfObjectValues(TaxLineItem::createFromDiscriminatorValue)); });
         deserializerMap.put("metadata", (n) -> { this.setMetadata(n.getObjectValue(CalculateTaxRequestMetadata::createFromDiscriminatorValue)); });
         deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
@@ -112,10 +111,10 @@ public class CalculateTaxRequest implements Parsable {
     }
     /**
      * Gets the interval_count property value. The interval_count property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getIntervalCount() {
+    public Long getIntervalCount() {
         return this.intervalCount;
     }
     /**
@@ -168,7 +167,7 @@ public class CalculateTaxRequest implements Parsable {
         writer.writeObjectValue("billing_address", this.getBillingAddress());
         writer.writeEnumValue("billing_cycle", this.getBillingCycle());
         writer.writeStringValue("currency", this.getCurrency());
-        writer.writeObjectValue("interval_count", this.getIntervalCount());
+        writer.writeLongValue("interval_count", this.getIntervalCount());
         writer.writeCollectionOfObjectValues("line_items", this.getLineItems());
         writer.writeObjectValue("metadata", this.getMetadata());
         writer.writeStringValue("org_id", this.getOrgId());
@@ -207,7 +206,7 @@ public class CalculateTaxRequest implements Parsable {
      * Sets the interval_count property value. The interval_count property
      * @param value Value to set for the interval_count property.
      */
-    public void setIntervalCount(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setIntervalCount(@jakarta.annotation.Nullable final Long value) {
         this.intervalCount = value;
     }
     /**

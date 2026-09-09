@@ -3,7 +3,6 @@ package com.rixl.sdk.models.analytics.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -20,15 +19,15 @@ public class VideoStats implements Parsable {
     /**
      * The completions property
      */
-    private UntypedNode completions;
+    private Long completions;
     /**
      * The starts property
      */
-    private UntypedNode starts;
+    private Long starts;
     /**
      * The total_views property
      */
-    private UntypedNode totalViews;
+    private Long totalViews;
     /**
      * The total_watch_time_ms property
      */
@@ -36,7 +35,7 @@ public class VideoStats implements Parsable {
     /**
      * The unique_viewers property
      */
-    private UntypedNode uniqueViewers;
+    private Long uniqueViewers;
     /**
      * The video_id property
      */
@@ -44,7 +43,7 @@ public class VideoStats implements Parsable {
     /**
      * The watches property
      */
-    private UntypedNode watches;
+    private Long watches;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -73,10 +72,10 @@ public class VideoStats implements Parsable {
     }
     /**
      * Gets the completions property value. The completions property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getCompletions() {
+    public Long getCompletions() {
         return this.completions;
     }
     /**
@@ -88,29 +87,29 @@ public class VideoStats implements Parsable {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
         deserializerMap.put("avg_watch_time_ms", (n) -> { this.setAvgWatchTimeMs(n.getDoubleValue()); });
         deserializerMap.put("completion_rate", (n) -> { this.setCompletionRate(n.getDoubleValue()); });
-        deserializerMap.put("completions", (n) -> { this.setCompletions(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("starts", (n) -> { this.setStarts(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("total_views", (n) -> { this.setTotalViews(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("completions", (n) -> { this.setCompletions(n.getLongValue()); });
+        deserializerMap.put("starts", (n) -> { this.setStarts(n.getLongValue()); });
+        deserializerMap.put("total_views", (n) -> { this.setTotalViews(n.getLongValue()); });
         deserializerMap.put("total_watch_time_ms", (n) -> { this.setTotalWatchTimeMs(n.getDoubleValue()); });
-        deserializerMap.put("unique_viewers", (n) -> { this.setUniqueViewers(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("unique_viewers", (n) -> { this.setUniqueViewers(n.getLongValue()); });
         deserializerMap.put("video_id", (n) -> { this.setVideoId(n.getStringValue()); });
-        deserializerMap.put("watches", (n) -> { this.setWatches(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("watches", (n) -> { this.setWatches(n.getLongValue()); });
         return deserializerMap;
     }
     /**
      * Gets the starts property value. The starts property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getStarts() {
+    public Long getStarts() {
         return this.starts;
     }
     /**
      * Gets the total_views property value. The total_views property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getTotalViews() {
+    public Long getTotalViews() {
         return this.totalViews;
     }
     /**
@@ -123,10 +122,10 @@ public class VideoStats implements Parsable {
     }
     /**
      * Gets the unique_viewers property value. The unique_viewers property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getUniqueViewers() {
+    public Long getUniqueViewers() {
         return this.uniqueViewers;
     }
     /**
@@ -139,10 +138,10 @@ public class VideoStats implements Parsable {
     }
     /**
      * Gets the watches property value. The watches property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getWatches() {
+    public Long getWatches() {
         return this.watches;
     }
     /**
@@ -153,13 +152,13 @@ public class VideoStats implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeDoubleValue("avg_watch_time_ms", this.getAvgWatchTimeMs());
         writer.writeDoubleValue("completion_rate", this.getCompletionRate());
-        writer.writeObjectValue("completions", this.getCompletions());
-        writer.writeObjectValue("starts", this.getStarts());
-        writer.writeObjectValue("total_views", this.getTotalViews());
+        writer.writeLongValue("completions", this.getCompletions());
+        writer.writeLongValue("starts", this.getStarts());
+        writer.writeLongValue("total_views", this.getTotalViews());
         writer.writeDoubleValue("total_watch_time_ms", this.getTotalWatchTimeMs());
-        writer.writeObjectValue("unique_viewers", this.getUniqueViewers());
+        writer.writeLongValue("unique_viewers", this.getUniqueViewers());
         writer.writeStringValue("video_id", this.getVideoId());
-        writer.writeObjectValue("watches", this.getWatches());
+        writer.writeLongValue("watches", this.getWatches());
     }
     /**
      * Sets the avg_watch_time_ms property value. The avg_watch_time_ms property
@@ -179,21 +178,21 @@ public class VideoStats implements Parsable {
      * Sets the completions property value. The completions property
      * @param value Value to set for the completions property.
      */
-    public void setCompletions(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setCompletions(@jakarta.annotation.Nullable final Long value) {
         this.completions = value;
     }
     /**
      * Sets the starts property value. The starts property
      * @param value Value to set for the starts property.
      */
-    public void setStarts(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setStarts(@jakarta.annotation.Nullable final Long value) {
         this.starts = value;
     }
     /**
      * Sets the total_views property value. The total_views property
      * @param value Value to set for the total_views property.
      */
-    public void setTotalViews(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setTotalViews(@jakarta.annotation.Nullable final Long value) {
         this.totalViews = value;
     }
     /**
@@ -207,7 +206,7 @@ public class VideoStats implements Parsable {
      * Sets the unique_viewers property value. The unique_viewers property
      * @param value Value to set for the unique_viewers property.
      */
-    public void setUniqueViewers(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setUniqueViewers(@jakarta.annotation.Nullable final Long value) {
         this.uniqueViewers = value;
     }
     /**
@@ -221,7 +220,7 @@ public class VideoStats implements Parsable {
      * Sets the watches property value. The watches property
      * @param value Value to set for the watches property.
      */
-    public void setWatches(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setWatches(@jakarta.annotation.Nullable final Long value) {
         this.watches = value;
     }
 }

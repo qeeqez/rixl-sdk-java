@@ -3,7 +3,6 @@ package com.rixl.sdk.models.analytics.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -12,11 +11,11 @@ public class RealtimeStats implements Parsable {
     /**
      * The active_users property
      */
-    private UntypedNode activeUsers;
+    private Long activeUsers;
     /**
      * The events_per_minute property
      */
-    private UntypedNode eventsPerMinute;
+    private Long eventsPerMinute;
     /**
      * The recent_events property
      */
@@ -45,18 +44,18 @@ public class RealtimeStats implements Parsable {
     }
     /**
      * Gets the active_users property value. The active_users property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getActiveUsers() {
+    public Long getActiveUsers() {
         return this.activeUsers;
     }
     /**
      * Gets the events_per_minute property value. The events_per_minute property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getEventsPerMinute() {
+    public Long getEventsPerMinute() {
         return this.eventsPerMinute;
     }
     /**
@@ -66,8 +65,8 @@ public class RealtimeStats implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
-        deserializerMap.put("active_users", (n) -> { this.setActiveUsers(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("events_per_minute", (n) -> { this.setEventsPerMinute(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("active_users", (n) -> { this.setActiveUsers(n.getLongValue()); });
+        deserializerMap.put("events_per_minute", (n) -> { this.setEventsPerMinute(n.getLongValue()); });
         deserializerMap.put("recent_events", (n) -> { this.setRecentEvents(n.getCollectionOfObjectValues(RecentEvent::createFromDiscriminatorValue)); });
         deserializerMap.put("timestamp", (n) -> { this.setTimestamp(n.getStringValue()); });
         deserializerMap.put("top_countries", (n) -> { this.setTopCountries(n.getCollectionOfObjectValues(CountryCount::createFromDiscriminatorValue)); });
@@ -112,8 +111,8 @@ public class RealtimeStats implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeObjectValue("active_users", this.getActiveUsers());
-        writer.writeObjectValue("events_per_minute", this.getEventsPerMinute());
+        writer.writeLongValue("active_users", this.getActiveUsers());
+        writer.writeLongValue("events_per_minute", this.getEventsPerMinute());
         writer.writeCollectionOfObjectValues("recent_events", this.getRecentEvents());
         writer.writeStringValue("timestamp", this.getTimestamp());
         writer.writeCollectionOfObjectValues("top_countries", this.getTopCountries());
@@ -123,14 +122,14 @@ public class RealtimeStats implements Parsable {
      * Sets the active_users property value. The active_users property
      * @param value Value to set for the active_users property.
      */
-    public void setActiveUsers(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setActiveUsers(@jakarta.annotation.Nullable final Long value) {
         this.activeUsers = value;
     }
     /**
      * Sets the events_per_minute property value. The events_per_minute property
      * @param value Value to set for the events_per_minute property.
      */
-    public void setEventsPerMinute(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setEventsPerMinute(@jakarta.annotation.Nullable final Long value) {
         this.eventsPerMinute = value;
     }
     /**

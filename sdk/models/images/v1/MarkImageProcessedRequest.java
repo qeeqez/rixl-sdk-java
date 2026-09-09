@@ -3,7 +3,6 @@ package com.rixl.sdk.models.images.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public class MarkImageProcessedRequest implements Parsable {
     /**
      * The size property
      */
-    private UntypedNode size;
+    private Long size;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -35,7 +34,7 @@ public class MarkImageProcessedRequest implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("file_id", (n) -> { this.setFileId(n.getStringValue()); });
-        deserializerMap.put("size", (n) -> { this.setSize(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("size", (n) -> { this.setSize(n.getLongValue()); });
         return deserializerMap;
     }
     /**
@@ -48,10 +47,10 @@ public class MarkImageProcessedRequest implements Parsable {
     }
     /**
      * Gets the size property value. The size property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getSize() {
+    public Long getSize() {
         return this.size;
     }
     /**
@@ -61,7 +60,7 @@ public class MarkImageProcessedRequest implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("file_id", this.getFileId());
-        writer.writeObjectValue("size", this.getSize());
+        writer.writeLongValue("size", this.getSize());
     }
     /**
      * Sets the file_id property value. The file_id property
@@ -74,7 +73,7 @@ public class MarkImageProcessedRequest implements Parsable {
      * Sets the size property value. The size property
      * @param value Value to set for the size property.
      */
-    public void setSize(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setSize(@jakarta.annotation.Nullable final Long value) {
         this.size = value;
     }
 }

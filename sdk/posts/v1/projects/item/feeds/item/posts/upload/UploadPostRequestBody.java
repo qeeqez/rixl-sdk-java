@@ -23,10 +23,6 @@ public class UploadPostRequestBody implements Parsable {
      */
     private String description;
     /**
-     * The feed_id property
-     */
-    private String feedId;
-    /**
      * The file_name property
      */
     private String fileName;
@@ -34,10 +30,6 @@ public class UploadPostRequestBody implements Parsable {
      * The org_id property
      */
     private String orgId;
-    /**
-     * The project_id property
-     */
-    private String projectId;
     /**
      * The video_quality property
      */
@@ -77,27 +69,17 @@ public class UploadPostRequestBody implements Parsable {
         return this.description;
     }
     /**
-     * Gets the feed_id property value. The feed_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getFeedId() {
-        return this.feedId;
-    }
-    /**
      * The deserialization information for the current model
      * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(8);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
         deserializerMap.put("content_type", (n) -> { this.setContentType(n.getEnumValue(MediaType::forValue)); });
         deserializerMap.put("creator_id", (n) -> { this.setCreatorId(n.getStringValue()); });
         deserializerMap.put("description", (n) -> { this.setDescription(n.getStringValue()); });
-        deserializerMap.put("feed_id", (n) -> { this.setFeedId(n.getStringValue()); });
         deserializerMap.put("file_name", (n) -> { this.setFileName(n.getStringValue()); });
         deserializerMap.put("org_id", (n) -> { this.setOrgId(n.getStringValue()); });
-        deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
         deserializerMap.put("video_quality", (n) -> { this.setVideoQuality(n.getEnumValue(VideoQuality::forValue)); });
         return deserializerMap;
     }
@@ -118,14 +100,6 @@ public class UploadPostRequestBody implements Parsable {
         return this.orgId;
     }
     /**
-     * Gets the project_id property value. The project_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getProjectId() {
-        return this.projectId;
-    }
-    /**
      * Gets the video_quality property value. The video_quality property
      * @return a {@link VideoQuality}
      */
@@ -142,10 +116,8 @@ public class UploadPostRequestBody implements Parsable {
         writer.writeEnumValue("content_type", this.getContentType());
         writer.writeStringValue("creator_id", this.getCreatorId());
         writer.writeStringValue("description", this.getDescription());
-        writer.writeStringValue("feed_id", this.getFeedId());
         writer.writeStringValue("file_name", this.getFileName());
         writer.writeStringValue("org_id", this.getOrgId());
-        writer.writeStringValue("project_id", this.getProjectId());
         writer.writeEnumValue("video_quality", this.getVideoQuality());
     }
     /**
@@ -170,13 +142,6 @@ public class UploadPostRequestBody implements Parsable {
         this.description = value;
     }
     /**
-     * Sets the feed_id property value. The feed_id property
-     * @param value Value to set for the feed_id property.
-     */
-    public void setFeedId(@jakarta.annotation.Nullable final String value) {
-        this.feedId = value;
-    }
-    /**
      * Sets the file_name property value. The file_name property
      * @param value Value to set for the file_name property.
      */
@@ -189,13 +154,6 @@ public class UploadPostRequestBody implements Parsable {
      */
     public void setOrgId(@jakarta.annotation.Nullable final String value) {
         this.orgId = value;
-    }
-    /**
-     * Sets the project_id property value. The project_id property
-     * @param value Value to set for the project_id property.
-     */
-    public void setProjectId(@jakarta.annotation.Nullable final String value) {
-        this.projectId = value;
     }
     /**
      * Sets the video_quality property value. The video_quality property

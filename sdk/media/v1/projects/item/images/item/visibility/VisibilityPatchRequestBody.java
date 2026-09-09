@@ -10,14 +10,6 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class VisibilityPatchRequestBody implements Parsable {
     /**
-     * The image_id property
-     */
-    private String imageId;
-    /**
-     * The project_id property
-     */
-    private String projectId;
-    /**
      * The visibility property
      */
     private Visibility visibility;
@@ -37,27 +29,9 @@ public class VisibilityPatchRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("image_id", (n) -> { this.setImageId(n.getStringValue()); });
-        deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
         deserializerMap.put("visibility", (n) -> { this.setVisibility(n.getEnumValue(Visibility::forValue)); });
         return deserializerMap;
-    }
-    /**
-     * Gets the image_id property value. The image_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getImageId() {
-        return this.imageId;
-    }
-    /**
-     * Gets the project_id property value. The project_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getProjectId() {
-        return this.projectId;
     }
     /**
      * Gets the visibility property value. The visibility property
@@ -73,23 +47,7 @@ public class VisibilityPatchRequestBody implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("image_id", this.getImageId());
-        writer.writeStringValue("project_id", this.getProjectId());
         writer.writeEnumValue("visibility", this.getVisibility());
-    }
-    /**
-     * Sets the image_id property value. The image_id property
-     * @param value Value to set for the image_id property.
-     */
-    public void setImageId(@jakarta.annotation.Nullable final String value) {
-        this.imageId = value;
-    }
-    /**
-     * Sets the project_id property value. The project_id property
-     * @param value Value to set for the project_id property.
-     */
-    public void setProjectId(@jakarta.annotation.Nullable final String value) {
-        this.projectId = value;
     }
     /**
      * Sets the visibility property value. The visibility property

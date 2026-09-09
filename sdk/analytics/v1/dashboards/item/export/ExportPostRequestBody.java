@@ -10,10 +10,6 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class ExportPostRequestBody implements Parsable {
     /**
-     * The dashboard_id property
-     */
-    private String dashboardId;
-    /**
      * The format property
      */
     private ExportFormat format;
@@ -36,21 +32,12 @@ public class ExportPostRequestBody implements Parsable {
         return new ExportPostRequestBody();
     }
     /**
-     * Gets the dashboard_id property value. The dashboard_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getDashboardId() {
-        return this.dashboardId;
-    }
-    /**
      * The deserialization information for the current model
      * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
-        deserializerMap.put("dashboard_id", (n) -> { this.setDashboardId(n.getStringValue()); });
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("format", (n) -> { this.setFormat(n.getEnumValue(ExportFormat::forValue)); });
         deserializerMap.put("time_end", (n) -> { this.setTimeEnd(n.getStringValue()); });
         deserializerMap.put("time_start", (n) -> { this.setTimeStart(n.getStringValue()); });
@@ -86,17 +73,9 @@ public class ExportPostRequestBody implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("dashboard_id", this.getDashboardId());
         writer.writeEnumValue("format", this.getFormat());
         writer.writeStringValue("time_end", this.getTimeEnd());
         writer.writeStringValue("time_start", this.getTimeStart());
-    }
-    /**
-     * Sets the dashboard_id property value. The dashboard_id property
-     * @param value Value to set for the dashboard_id property.
-     */
-    public void setDashboardId(@jakarta.annotation.Nullable final String value) {
-        this.dashboardId = value;
     }
     /**
      * Sets the format property value. The format property

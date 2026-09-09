@@ -1,26 +1,35 @@
-package com.rixl.sdk.support.v1.tickets.item.close;
+package com.rixl.sdk.media.v1.projects.item.videos.item.chapters;
 
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
+import com.rixl.sdk.models.videos.v1.Chapter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
-public class ClosePostRequestBody implements Parsable {
+public class ChaptersPutRequestBody implements Parsable {
     /**
-     * The ticket_id property
+     * The chapters property
      */
-    private String ticketId;
+    private java.util.List<Chapter> chapters;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
-     * @return a {@link ClosePostRequestBody}
+     * @return a {@link ChaptersPutRequestBody}
      */
     @jakarta.annotation.Nonnull
-    public static ClosePostRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
+    public static ChaptersPutRequestBody createFromDiscriminatorValue(@jakarta.annotation.Nonnull final ParseNode parseNode) {
         Objects.requireNonNull(parseNode);
-        return new ClosePostRequestBody();
+        return new ChaptersPutRequestBody();
+    }
+    /**
+     * Gets the chapters property value. The chapters property
+     * @return a {@link java.util.List<Chapter>}
+     */
+    @jakarta.annotation.Nullable
+    public java.util.List<Chapter> getChapters() {
+        return this.chapters;
     }
     /**
      * The deserialization information for the current model
@@ -29,16 +38,8 @@ public class ClosePostRequestBody implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(1);
-        deserializerMap.put("ticket_id", (n) -> { this.setTicketId(n.getStringValue()); });
+        deserializerMap.put("chapters", (n) -> { this.setChapters(n.getCollectionOfObjectValues(Chapter::createFromDiscriminatorValue)); });
         return deserializerMap;
-    }
-    /**
-     * Gets the ticket_id property value. The ticket_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getTicketId() {
-        return this.ticketId;
     }
     /**
      * Serializes information the current object
@@ -46,13 +47,13 @@ public class ClosePostRequestBody implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("ticket_id", this.getTicketId());
+        writer.writeCollectionOfObjectValues("chapters", this.getChapters());
     }
     /**
-     * Sets the ticket_id property value. The ticket_id property
-     * @param value Value to set for the ticket_id property.
+     * Sets the chapters property value. The chapters property
+     * @param value Value to set for the chapters property.
      */
-    public void setTicketId(@jakarta.annotation.Nullable final String value) {
-        this.ticketId = value;
+    public void setChapters(@jakarta.annotation.Nullable final java.util.List<Chapter> value) {
+        this.chapters = value;
     }
 }

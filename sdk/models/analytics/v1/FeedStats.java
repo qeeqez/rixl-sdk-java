@@ -3,7 +3,6 @@ package com.rixl.sdk.models.analytics.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -20,11 +19,11 @@ public class FeedStats implements Parsable {
     /**
      * The total_posts property
      */
-    private UntypedNode totalPosts;
+    private Long totalPosts;
     /**
      * The total_views property
      */
-    private UntypedNode totalViews;
+    private Long totalViews;
     /**
      * The total_watch_time_ms property
      */
@@ -32,7 +31,7 @@ public class FeedStats implements Parsable {
     /**
      * The unique_viewers property
      */
-    private UntypedNode uniqueViewers;
+    private Long uniqueViewers;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -68,26 +67,26 @@ public class FeedStats implements Parsable {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(6);
         deserializerMap.put("avg_time_per_visit_ms", (n) -> { this.setAvgTimePerVisitMs(n.getDoubleValue()); });
         deserializerMap.put("feed_id", (n) -> { this.setFeedId(n.getStringValue()); });
-        deserializerMap.put("total_posts", (n) -> { this.setTotalPosts(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("total_views", (n) -> { this.setTotalViews(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("total_posts", (n) -> { this.setTotalPosts(n.getLongValue()); });
+        deserializerMap.put("total_views", (n) -> { this.setTotalViews(n.getLongValue()); });
         deserializerMap.put("total_watch_time_ms", (n) -> { this.setTotalWatchTimeMs(n.getDoubleValue()); });
-        deserializerMap.put("unique_viewers", (n) -> { this.setUniqueViewers(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("unique_viewers", (n) -> { this.setUniqueViewers(n.getLongValue()); });
         return deserializerMap;
     }
     /**
      * Gets the total_posts property value. The total_posts property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getTotalPosts() {
+    public Long getTotalPosts() {
         return this.totalPosts;
     }
     /**
      * Gets the total_views property value. The total_views property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getTotalViews() {
+    public Long getTotalViews() {
         return this.totalViews;
     }
     /**
@@ -100,10 +99,10 @@ public class FeedStats implements Parsable {
     }
     /**
      * Gets the unique_viewers property value. The unique_viewers property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getUniqueViewers() {
+    public Long getUniqueViewers() {
         return this.uniqueViewers;
     }
     /**
@@ -114,10 +113,10 @@ public class FeedStats implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeDoubleValue("avg_time_per_visit_ms", this.getAvgTimePerVisitMs());
         writer.writeStringValue("feed_id", this.getFeedId());
-        writer.writeObjectValue("total_posts", this.getTotalPosts());
-        writer.writeObjectValue("total_views", this.getTotalViews());
+        writer.writeLongValue("total_posts", this.getTotalPosts());
+        writer.writeLongValue("total_views", this.getTotalViews());
         writer.writeDoubleValue("total_watch_time_ms", this.getTotalWatchTimeMs());
-        writer.writeObjectValue("unique_viewers", this.getUniqueViewers());
+        writer.writeLongValue("unique_viewers", this.getUniqueViewers());
     }
     /**
      * Sets the avg_time_per_visit_ms property value. The avg_time_per_visit_ms property
@@ -137,14 +136,14 @@ public class FeedStats implements Parsable {
      * Sets the total_posts property value. The total_posts property
      * @param value Value to set for the total_posts property.
      */
-    public void setTotalPosts(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setTotalPosts(@jakarta.annotation.Nullable final Long value) {
         this.totalPosts = value;
     }
     /**
      * Sets the total_views property value. The total_views property
      * @param value Value to set for the total_views property.
      */
-    public void setTotalViews(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setTotalViews(@jakarta.annotation.Nullable final Long value) {
         this.totalViews = value;
     }
     /**
@@ -158,7 +157,7 @@ public class FeedStats implements Parsable {
      * Sets the unique_viewers property value. The unique_viewers property
      * @param value Value to set for the unique_viewers property.
      */
-    public void setUniqueViewers(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setUniqueViewers(@jakarta.annotation.Nullable final Long value) {
         this.uniqueViewers = value;
     }
 }

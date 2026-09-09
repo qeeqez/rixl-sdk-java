@@ -3,7 +3,6 @@ package com.rixl.sdk.models.apikeys.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public class ListApiKeysResponse implements Parsable {
     /**
      * The total property
      */
-    private UntypedNode total;
+    private Long total;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -43,15 +42,15 @@ public class ListApiKeysResponse implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("api_keys", (n) -> { this.setApiKeys(n.getCollectionOfObjectValues(ApiKey::createFromDiscriminatorValue)); });
-        deserializerMap.put("total", (n) -> { this.setTotal(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("total", (n) -> { this.setTotal(n.getLongValue()); });
         return deserializerMap;
     }
     /**
      * Gets the total property value. The total property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getTotal() {
+    public Long getTotal() {
         return this.total;
     }
     /**
@@ -61,7 +60,7 @@ public class ListApiKeysResponse implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeCollectionOfObjectValues("api_keys", this.getApiKeys());
-        writer.writeObjectValue("total", this.getTotal());
+        writer.writeLongValue("total", this.getTotal());
     }
     /**
      * Sets the api_keys property value. The api_keys property
@@ -74,7 +73,7 @@ public class ListApiKeysResponse implements Parsable {
      * Sets the total property value. The total property
      * @param value Value to set for the total property.
      */
-    public void setTotal(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setTotal(@jakarta.annotation.Nullable final Long value) {
         this.total = value;
     }
 }

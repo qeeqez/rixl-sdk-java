@@ -3,7 +3,6 @@ package com.rixl.sdk.models.billing.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -12,7 +11,7 @@ public class TaxLineItem implements Parsable {
     /**
      * The amount property
      */
-    private UntypedNode amount;
+    private Long amount;
     /**
      * The reference property
      */
@@ -33,10 +32,10 @@ public class TaxLineItem implements Parsable {
     }
     /**
      * Gets the amount property value. The amount property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getAmount() {
+    public Long getAmount() {
         return this.amount;
     }
     /**
@@ -46,7 +45,7 @@ public class TaxLineItem implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("amount", (n) -> { this.setAmount(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("amount", (n) -> { this.setAmount(n.getLongValue()); });
         deserializerMap.put("reference", (n) -> { this.setReference(n.getStringValue()); });
         deserializerMap.put("tax_code", (n) -> { this.setTaxCode(n.getStringValue()); });
         return deserializerMap;
@@ -73,7 +72,7 @@ public class TaxLineItem implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeObjectValue("amount", this.getAmount());
+        writer.writeLongValue("amount", this.getAmount());
         writer.writeStringValue("reference", this.getReference());
         writer.writeStringValue("tax_code", this.getTaxCode());
     }
@@ -81,7 +80,7 @@ public class TaxLineItem implements Parsable {
      * Sets the amount property value. The amount property
      * @param value Value to set for the amount property.
      */
-    public void setAmount(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setAmount(@jakarta.annotation.Nullable final Long value) {
         this.amount = value;
     }
     /**

@@ -3,7 +3,6 @@ package com.rixl.sdk.models.posts.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -24,7 +23,7 @@ public class ListPostsResponse implements Parsable {
     /**
      * The total property
      */
-    private UntypedNode total;
+    private Long total;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -45,7 +44,7 @@ public class ListPostsResponse implements Parsable {
         deserializerMap.put("limit", (n) -> { this.setLimit(n.getIntegerValue()); });
         deserializerMap.put("offset", (n) -> { this.setOffset(n.getIntegerValue()); });
         deserializerMap.put("posts", (n) -> { this.setPosts(n.getCollectionOfObjectValues(Post::createFromDiscriminatorValue)); });
-        deserializerMap.put("total", (n) -> { this.setTotal(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("total", (n) -> { this.setTotal(n.getLongValue()); });
         return deserializerMap;
     }
     /**
@@ -74,10 +73,10 @@ public class ListPostsResponse implements Parsable {
     }
     /**
      * Gets the total property value. The total property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getTotal() {
+    public Long getTotal() {
         return this.total;
     }
     /**
@@ -89,7 +88,7 @@ public class ListPostsResponse implements Parsable {
         writer.writeIntegerValue("limit", this.getLimit());
         writer.writeIntegerValue("offset", this.getOffset());
         writer.writeCollectionOfObjectValues("posts", this.getPosts());
-        writer.writeObjectValue("total", this.getTotal());
+        writer.writeLongValue("total", this.getTotal());
     }
     /**
      * Sets the limit property value. Maximum number of items returned.
@@ -116,7 +115,7 @@ public class ListPostsResponse implements Parsable {
      * Sets the total property value. The total property
      * @param value Value to set for the total property.
      */
-    public void setTotal(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setTotal(@jakarta.annotation.Nullable final Long value) {
         this.total = value;
     }
 }

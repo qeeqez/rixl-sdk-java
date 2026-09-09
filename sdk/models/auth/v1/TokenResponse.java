@@ -3,7 +3,6 @@ package com.rixl.sdk.models.auth.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public class TokenResponse implements Parsable {
     /**
      * The expires_in property
      */
-    private UntypedNode expiresIn;
+    private Long expiresIn;
     /**
      * The refresh_token property
      */
@@ -49,10 +48,10 @@ public class TokenResponse implements Parsable {
     }
     /**
      * Gets the expires_in property value. The expires_in property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getExpiresIn() {
+    public Long getExpiresIn() {
         return this.expiresIn;
     }
     /**
@@ -63,7 +62,7 @@ public class TokenResponse implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(5);
         deserializerMap.put("access_token", (n) -> { this.setAccessToken(n.getStringValue()); });
-        deserializerMap.put("expires_in", (n) -> { this.setExpiresIn(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("expires_in", (n) -> { this.setExpiresIn(n.getLongValue()); });
         deserializerMap.put("refresh_token", (n) -> { this.setRefreshToken(n.getStringValue()); });
         deserializerMap.put("requires_action", (n) -> { this.setRequiresAction(n.getStringValue()); });
         deserializerMap.put("token_type", (n) -> { this.setTokenType(n.getStringValue()); });
@@ -100,7 +99,7 @@ public class TokenResponse implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeStringValue("access_token", this.getAccessToken());
-        writer.writeObjectValue("expires_in", this.getExpiresIn());
+        writer.writeLongValue("expires_in", this.getExpiresIn());
         writer.writeStringValue("refresh_token", this.getRefreshToken());
         writer.writeStringValue("requires_action", this.getRequiresAction());
         writer.writeStringValue("token_type", this.getTokenType());
@@ -116,7 +115,7 @@ public class TokenResponse implements Parsable {
      * Sets the expires_in property value. The expires_in property
      * @param value Value to set for the expires_in property.
      */
-    public void setExpiresIn(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setExpiresIn(@jakarta.annotation.Nullable final Long value) {
         this.expiresIn = value;
     }
     /**

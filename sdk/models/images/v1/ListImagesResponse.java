@@ -3,7 +3,6 @@ package com.rixl.sdk.models.images.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -32,7 +31,7 @@ public class ListImagesResponse implements Parsable {
     /**
      * The total property
      */
-    private UntypedNode total;
+    private Long total;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -55,7 +54,7 @@ public class ListImagesResponse implements Parsable {
         deserializerMap.put("offset", (n) -> { this.setOffset(n.getIntegerValue()); });
         deserializerMap.put("sort_direction", (n) -> { this.setSortDirection(n.getStringValue()); });
         deserializerMap.put("sort_field", (n) -> { this.setSortField(n.getStringValue()); });
-        deserializerMap.put("total", (n) -> { this.setTotal(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("total", (n) -> { this.setTotal(n.getLongValue()); });
         return deserializerMap;
     }
     /**
@@ -100,10 +99,10 @@ public class ListImagesResponse implements Parsable {
     }
     /**
      * Gets the total property value. The total property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getTotal() {
+    public Long getTotal() {
         return this.total;
     }
     /**
@@ -117,7 +116,7 @@ public class ListImagesResponse implements Parsable {
         writer.writeIntegerValue("offset", this.getOffset());
         writer.writeStringValue("sort_direction", this.getSortDirection());
         writer.writeStringValue("sort_field", this.getSortField());
-        writer.writeObjectValue("total", this.getTotal());
+        writer.writeLongValue("total", this.getTotal());
     }
     /**
      * Sets the images property value. The images property
@@ -158,7 +157,7 @@ public class ListImagesResponse implements Parsable {
      * Sets the total property value. The total property
      * @param value Value to set for the total property.
      */
-    public void setTotal(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setTotal(@jakarta.annotation.Nullable final Long value) {
         this.total = value;
     }
 }

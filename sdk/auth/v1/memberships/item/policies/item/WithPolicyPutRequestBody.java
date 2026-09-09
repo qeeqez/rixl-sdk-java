@@ -21,10 +21,6 @@ public class WithPolicyPutRequestBody implements Parsable {
      */
     private java.util.List<String> permissions;
     /**
-     * The policy_id property
-     */
-    private String policyId;
-    /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a {@link WithPolicyPutRequestBody}
@@ -48,11 +44,10 @@ public class WithPolicyPutRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
         deserializerMap.put("description", (n) -> { this.setDescription(n.getStringValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
         deserializerMap.put("permissions", (n) -> { this.setPermissions(n.getCollectionOfPrimitiveValues(String.class)); });
-        deserializerMap.put("policy_id", (n) -> { this.setPolicyId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -72,14 +67,6 @@ public class WithPolicyPutRequestBody implements Parsable {
         return this.permissions;
     }
     /**
-     * Gets the policy_id property value. The policy_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getPolicyId() {
-        return this.policyId;
-    }
-    /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
      */
@@ -88,7 +75,6 @@ public class WithPolicyPutRequestBody implements Parsable {
         writer.writeStringValue("description", this.getDescription());
         writer.writeStringValue("name", this.getName());
         writer.writeCollectionOfPrimitiveValues("permissions", this.getPermissions());
-        writer.writeStringValue("policy_id", this.getPolicyId());
     }
     /**
      * Sets the description property value. The description property
@@ -110,12 +96,5 @@ public class WithPolicyPutRequestBody implements Parsable {
      */
     public void setPermissions(@jakarta.annotation.Nullable final java.util.List<String> value) {
         this.permissions = value;
-    }
-    /**
-     * Sets the policy_id property value. The policy_id property
-     * @param value Value to set for the policy_id property.
-     */
-    public void setPolicyId(@jakarta.annotation.Nullable final String value) {
-        this.policyId = value;
     }
 }

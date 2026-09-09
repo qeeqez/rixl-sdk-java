@@ -10,10 +10,6 @@ import java.util.Objects;
 @jakarta.annotation.Generated("com.microsoft.kiota")
 public class LayoutPostRequestBody implements Parsable {
     /**
-     * The dashboard_id property
-     */
-    private String dashboardId;
-    /**
      * The expected_revision property
      */
     private Integer expectedRevision;
@@ -32,14 +28,6 @@ public class LayoutPostRequestBody implements Parsable {
         return new LayoutPostRequestBody();
     }
     /**
-     * Gets the dashboard_id property value. The dashboard_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getDashboardId() {
-        return this.dashboardId;
-    }
-    /**
      * Gets the expected_revision property value. The expected_revision property
      * @return a {@link Integer}
      */
@@ -53,8 +41,7 @@ public class LayoutPostRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(3);
-        deserializerMap.put("dashboard_id", (n) -> { this.setDashboardId(n.getStringValue()); });
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(2);
         deserializerMap.put("expected_revision", (n) -> { this.setExpectedRevision(n.getIntegerValue()); });
         deserializerMap.put("positions", (n) -> { this.setPositions(n.getCollectionOfObjectValues(WidgetPosition::createFromDiscriminatorValue)); });
         return deserializerMap;
@@ -73,16 +60,8 @@ public class LayoutPostRequestBody implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeStringValue("dashboard_id", this.getDashboardId());
         writer.writeIntegerValue("expected_revision", this.getExpectedRevision());
         writer.writeCollectionOfObjectValues("positions", this.getPositions());
-    }
-    /**
-     * Sets the dashboard_id property value. The dashboard_id property
-     * @param value Value to set for the dashboard_id property.
-     */
-    public void setDashboardId(@jakarta.annotation.Nullable final String value) {
-        this.dashboardId = value;
     }
     /**
      * Sets the expected_revision property value. The expected_revision property

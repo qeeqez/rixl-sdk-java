@@ -21,10 +21,6 @@ public class WithFeedPutRequestBody implements Parsable {
      */
     private String description;
     /**
-     * The feed_id property
-     */
-    private String feedId;
-    /**
      * The has_comments property
      */
     private Boolean hasComments;
@@ -40,10 +36,6 @@ public class WithFeedPutRequestBody implements Parsable {
      * The name property
      */
     private String name;
-    /**
-     * The project_id property
-     */
-    private String projectId;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -79,29 +71,19 @@ public class WithFeedPutRequestBody implements Parsable {
         return this.description;
     }
     /**
-     * Gets the feed_id property value. The feed_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getFeedId() {
-        return this.feedId;
-    }
-    /**
      * The deserialization information for the current model
      * @return a {@link Map<String, java.util.function.Consumer<ParseNode>>}
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(9);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(7);
         deserializerMap.put("allow_images", (n) -> { this.setAllowImages(n.getBooleanValue()); });
         deserializerMap.put("allow_videos", (n) -> { this.setAllowVideos(n.getBooleanValue()); });
         deserializerMap.put("description", (n) -> { this.setDescription(n.getStringValue()); });
-        deserializerMap.put("feed_id", (n) -> { this.setFeedId(n.getStringValue()); });
         deserializerMap.put("has_comments", (n) -> { this.setHasComments(n.getBooleanValue()); });
         deserializerMap.put("has_likes", (n) -> { this.setHasLikes(n.getBooleanValue()); });
         deserializerMap.put("has_shares", (n) -> { this.setHasShares(n.getBooleanValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
-        deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -137,14 +119,6 @@ public class WithFeedPutRequestBody implements Parsable {
         return this.name;
     }
     /**
-     * Gets the project_id property value. The project_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getProjectId() {
-        return this.projectId;
-    }
-    /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
      */
@@ -153,12 +127,10 @@ public class WithFeedPutRequestBody implements Parsable {
         writer.writeBooleanValue("allow_images", this.getAllowImages());
         writer.writeBooleanValue("allow_videos", this.getAllowVideos());
         writer.writeStringValue("description", this.getDescription());
-        writer.writeStringValue("feed_id", this.getFeedId());
         writer.writeBooleanValue("has_comments", this.getHasComments());
         writer.writeBooleanValue("has_likes", this.getHasLikes());
         writer.writeBooleanValue("has_shares", this.getHasShares());
         writer.writeStringValue("name", this.getName());
-        writer.writeStringValue("project_id", this.getProjectId());
     }
     /**
      * Sets the allow_images property value. The allow_images property
@@ -180,13 +152,6 @@ public class WithFeedPutRequestBody implements Parsable {
      */
     public void setDescription(@jakarta.annotation.Nullable final String value) {
         this.description = value;
-    }
-    /**
-     * Sets the feed_id property value. The feed_id property
-     * @param value Value to set for the feed_id property.
-     */
-    public void setFeedId(@jakarta.annotation.Nullable final String value) {
-        this.feedId = value;
     }
     /**
      * Sets the has_comments property value. The has_comments property
@@ -215,12 +180,5 @@ public class WithFeedPutRequestBody implements Parsable {
      */
     public void setName(@jakarta.annotation.Nullable final String value) {
         this.name = value;
-    }
-    /**
-     * Sets the project_id property value. The project_id property
-     * @param value Value to set for the project_id property.
-     */
-    public void setProjectId(@jakarta.annotation.Nullable final String value) {
-        this.projectId = value;
     }
 }

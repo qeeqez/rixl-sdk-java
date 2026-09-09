@@ -3,7 +3,6 @@ package com.rixl.sdk.models.auth.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -24,7 +23,7 @@ public class LoginResponse implements Parsable {
     /**
      * The expires_in property
      */
-    private UntypedNode expiresIn;
+    private Long expiresIn;
     /**
      * passkey_options is the WebAuthn PublicKeyCredentialRequestOptions as JSON, present only when &quot;passkey&quot; is one of the authentication methods.
      */
@@ -85,10 +84,10 @@ public class LoginResponse implements Parsable {
     }
     /**
      * Gets the expires_in property value. The expires_in property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getExpiresIn() {
+    public Long getExpiresIn() {
         return this.expiresIn;
     }
     /**
@@ -101,7 +100,7 @@ public class LoginResponse implements Parsable {
         deserializerMap.put("access_token", (n) -> { this.setAccessToken(n.getStringValue()); });
         deserializerMap.put("authentication", (n) -> { this.setAuthentication(n.getCollectionOfEnumValues(AuthMethod::forValue)); });
         deserializerMap.put("email", (n) -> { this.setEmail(n.getStringValue()); });
-        deserializerMap.put("expires_in", (n) -> { this.setExpiresIn(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("expires_in", (n) -> { this.setExpiresIn(n.getLongValue()); });
         deserializerMap.put("passkey_options", (n) -> { this.setPasskeyOptions(n.getByteArrayValue()); });
         deserializerMap.put("refresh_token", (n) -> { this.setRefreshToken(n.getStringValue()); });
         deserializerMap.put("requires_action", (n) -> { this.setRequiresAction(n.getStringValue()); });
@@ -167,7 +166,7 @@ public class LoginResponse implements Parsable {
         writer.writeStringValue("access_token", this.getAccessToken());
         writer.writeCollectionOfEnumValues("authentication", this.getAuthentication());
         writer.writeStringValue("email", this.getEmail());
-        writer.writeObjectValue("expires_in", this.getExpiresIn());
+        writer.writeLongValue("expires_in", this.getExpiresIn());
         writer.writeByteArrayValue("passkey_options", this.getPasskeyOptions());
         writer.writeStringValue("refresh_token", this.getRefreshToken());
         writer.writeStringValue("requires_action", this.getRequiresAction());
@@ -200,7 +199,7 @@ public class LoginResponse implements Parsable {
      * Sets the expires_in property value. The expires_in property
      * @param value Value to set for the expires_in property.
      */
-    public void setExpiresIn(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setExpiresIn(@jakarta.annotation.Nullable final Long value) {
         this.expiresIn = value;
     }
     /**

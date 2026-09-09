@@ -37,10 +37,6 @@ public class FeedsPostRequestBody implements Parsable {
      */
     private String name;
     /**
-     * The project_id property
-     */
-    private String projectId;
-    /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
      * @return a {@link FeedsPostRequestBody}
@@ -80,7 +76,7 @@ public class FeedsPostRequestBody implements Parsable {
      */
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
-        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(8);
+        final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(7);
         deserializerMap.put("allow_images", (n) -> { this.setAllowImages(n.getBooleanValue()); });
         deserializerMap.put("allow_videos", (n) -> { this.setAllowVideos(n.getBooleanValue()); });
         deserializerMap.put("description", (n) -> { this.setDescription(n.getStringValue()); });
@@ -88,7 +84,6 @@ public class FeedsPostRequestBody implements Parsable {
         deserializerMap.put("has_likes", (n) -> { this.setHasLikes(n.getBooleanValue()); });
         deserializerMap.put("has_shares", (n) -> { this.setHasShares(n.getBooleanValue()); });
         deserializerMap.put("name", (n) -> { this.setName(n.getStringValue()); });
-        deserializerMap.put("project_id", (n) -> { this.setProjectId(n.getStringValue()); });
         return deserializerMap;
     }
     /**
@@ -124,14 +119,6 @@ public class FeedsPostRequestBody implements Parsable {
         return this.name;
     }
     /**
-     * Gets the project_id property value. The project_id property
-     * @return a {@link String}
-     */
-    @jakarta.annotation.Nullable
-    public String getProjectId() {
-        return this.projectId;
-    }
-    /**
      * Serializes information the current object
      * @param writer Serialization writer to use to serialize this model
      */
@@ -144,7 +131,6 @@ public class FeedsPostRequestBody implements Parsable {
         writer.writeBooleanValue("has_likes", this.getHasLikes());
         writer.writeBooleanValue("has_shares", this.getHasShares());
         writer.writeStringValue("name", this.getName());
-        writer.writeStringValue("project_id", this.getProjectId());
     }
     /**
      * Sets the allow_images property value. The allow_images property
@@ -194,12 +180,5 @@ public class FeedsPostRequestBody implements Parsable {
      */
     public void setName(@jakarta.annotation.Nullable final String value) {
         this.name = value;
-    }
-    /**
-     * Sets the project_id property value. The project_id property
-     * @param value Value to set for the project_id property.
-     */
-    public void setProjectId(@jakarta.annotation.Nullable final String value) {
-        this.projectId = value;
     }
 }

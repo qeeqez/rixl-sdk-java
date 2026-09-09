@@ -3,7 +3,6 @@ package com.rixl.sdk.models.analytics.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public class ImageStats implements Parsable {
     /**
      * The feed_views property
      */
-    private UntypedNode feedViews;
+    private Long feedViews;
     /**
      * The image_id property
      */
@@ -24,7 +23,7 @@ public class ImageStats implements Parsable {
     /**
      * The standalone_views property
      */
-    private UntypedNode standaloneViews;
+    private Long standaloneViews;
     /**
      * The total_view_duration_ms property
      */
@@ -32,11 +31,11 @@ public class ImageStats implements Parsable {
     /**
      * The total_views property
      */
-    private UntypedNode totalViews;
+    private Long totalViews;
     /**
      * The unique_viewers property
      */
-    private UntypedNode uniqueViewers;
+    private Long uniqueViewers;
     /**
      * Creates a new instance of the appropriate class based on discriminator value
      * @param parseNode The parse node to use to read the discriminator value and create the object
@@ -57,10 +56,10 @@ public class ImageStats implements Parsable {
     }
     /**
      * Gets the feed_views property value. The feed_views property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getFeedViews() {
+    public Long getFeedViews() {
         return this.feedViews;
     }
     /**
@@ -71,12 +70,12 @@ public class ImageStats implements Parsable {
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(7);
         deserializerMap.put("avg_view_duration_ms", (n) -> { this.setAvgViewDurationMs(n.getDoubleValue()); });
-        deserializerMap.put("feed_views", (n) -> { this.setFeedViews(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("feed_views", (n) -> { this.setFeedViews(n.getLongValue()); });
         deserializerMap.put("image_id", (n) -> { this.setImageId(n.getStringValue()); });
-        deserializerMap.put("standalone_views", (n) -> { this.setStandaloneViews(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("standalone_views", (n) -> { this.setStandaloneViews(n.getLongValue()); });
         deserializerMap.put("total_view_duration_ms", (n) -> { this.setTotalViewDurationMs(n.getDoubleValue()); });
-        deserializerMap.put("total_views", (n) -> { this.setTotalViews(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("unique_viewers", (n) -> { this.setUniqueViewers(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("total_views", (n) -> { this.setTotalViews(n.getLongValue()); });
+        deserializerMap.put("unique_viewers", (n) -> { this.setUniqueViewers(n.getLongValue()); });
         return deserializerMap;
     }
     /**
@@ -89,10 +88,10 @@ public class ImageStats implements Parsable {
     }
     /**
      * Gets the standalone_views property value. The standalone_views property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getStandaloneViews() {
+    public Long getStandaloneViews() {
         return this.standaloneViews;
     }
     /**
@@ -105,18 +104,18 @@ public class ImageStats implements Parsable {
     }
     /**
      * Gets the total_views property value. The total_views property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getTotalViews() {
+    public Long getTotalViews() {
         return this.totalViews;
     }
     /**
      * Gets the unique_viewers property value. The unique_viewers property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getUniqueViewers() {
+    public Long getUniqueViewers() {
         return this.uniqueViewers;
     }
     /**
@@ -126,12 +125,12 @@ public class ImageStats implements Parsable {
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
         writer.writeDoubleValue("avg_view_duration_ms", this.getAvgViewDurationMs());
-        writer.writeObjectValue("feed_views", this.getFeedViews());
+        writer.writeLongValue("feed_views", this.getFeedViews());
         writer.writeStringValue("image_id", this.getImageId());
-        writer.writeObjectValue("standalone_views", this.getStandaloneViews());
+        writer.writeLongValue("standalone_views", this.getStandaloneViews());
         writer.writeDoubleValue("total_view_duration_ms", this.getTotalViewDurationMs());
-        writer.writeObjectValue("total_views", this.getTotalViews());
-        writer.writeObjectValue("unique_viewers", this.getUniqueViewers());
+        writer.writeLongValue("total_views", this.getTotalViews());
+        writer.writeLongValue("unique_viewers", this.getUniqueViewers());
     }
     /**
      * Sets the avg_view_duration_ms property value. Dwell time; images have no playback.
@@ -144,7 +143,7 @@ public class ImageStats implements Parsable {
      * Sets the feed_views property value. The feed_views property
      * @param value Value to set for the feed_views property.
      */
-    public void setFeedViews(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setFeedViews(@jakarta.annotation.Nullable final Long value) {
         this.feedViews = value;
     }
     /**
@@ -158,7 +157,7 @@ public class ImageStats implements Parsable {
      * Sets the standalone_views property value. The standalone_views property
      * @param value Value to set for the standalone_views property.
      */
-    public void setStandaloneViews(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setStandaloneViews(@jakarta.annotation.Nullable final Long value) {
         this.standaloneViews = value;
     }
     /**
@@ -172,14 +171,14 @@ public class ImageStats implements Parsable {
      * Sets the total_views property value. The total_views property
      * @param value Value to set for the total_views property.
      */
-    public void setTotalViews(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setTotalViews(@jakarta.annotation.Nullable final Long value) {
         this.totalViews = value;
     }
     /**
      * Sets the unique_viewers property value. The unique_viewers property
      * @param value Value to set for the unique_viewers property.
      */
-    public void setUniqueViewers(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setUniqueViewers(@jakarta.annotation.Nullable final Long value) {
         this.uniqueViewers = value;
     }
 }

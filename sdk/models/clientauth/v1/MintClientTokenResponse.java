@@ -3,7 +3,6 @@ package com.rixl.sdk.models.clientauth.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +20,7 @@ public class MintClientTokenResponse implements Parsable {
     /**
      * The expires_in property
      */
-    private UntypedNode expiresIn;
+    private Long expiresIn;
     /**
      * The token_type property
      */
@@ -54,10 +53,10 @@ public class MintClientTokenResponse implements Parsable {
     }
     /**
      * Gets the expires_in property value. The expires_in property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getExpiresIn() {
+    public Long getExpiresIn() {
         return this.expiresIn;
     }
     /**
@@ -69,7 +68,7 @@ public class MintClientTokenResponse implements Parsable {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(4);
         deserializerMap.put("access_token", (n) -> { this.setAccessToken(n.getStringValue()); });
         deserializerMap.put("expires_at", (n) -> { this.setExpiresAt(n.getOffsetDateTimeValue()); });
-        deserializerMap.put("expires_in", (n) -> { this.setExpiresIn(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("expires_in", (n) -> { this.setExpiresIn(n.getLongValue()); });
         deserializerMap.put("token_type", (n) -> { this.setTokenType(n.getStringValue()); });
         return deserializerMap;
     }
@@ -89,7 +88,7 @@ public class MintClientTokenResponse implements Parsable {
         Objects.requireNonNull(writer);
         writer.writeStringValue("access_token", this.getAccessToken());
         writer.writeOffsetDateTimeValue("expires_at", this.getExpiresAt());
-        writer.writeObjectValue("expires_in", this.getExpiresIn());
+        writer.writeLongValue("expires_in", this.getExpiresIn());
         writer.writeStringValue("token_type", this.getTokenType());
     }
     /**
@@ -110,7 +109,7 @@ public class MintClientTokenResponse implements Parsable {
      * Sets the expires_in property value. The expires_in property
      * @param value Value to set for the expires_in property.
      */
-    public void setExpiresIn(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setExpiresIn(@jakarta.annotation.Nullable final Long value) {
         this.expiresIn = value;
     }
     /**

@@ -3,7 +3,6 @@ package com.rixl.sdk.models.billing.v1;
 import com.microsoft.kiota.serialization.Parsable;
 import com.microsoft.kiota.serialization.ParseNode;
 import com.microsoft.kiota.serialization.SerializationWriter;
-import com.microsoft.kiota.serialization.UntypedNode;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,11 +12,11 @@ public class PlanTaxCalculationResponse implements Parsable {
     /**
      * The amount_total property
      */
-    private UntypedNode amountTotal;
+    private Long amountTotal;
     /**
      * The base_amount property
      */
-    private UntypedNode baseAmount;
+    private Long baseAmount;
     /**
      * The billing_address property
      */
@@ -49,11 +48,11 @@ public class PlanTaxCalculationResponse implements Parsable {
     /**
      * The tax_amount_exclusive property
      */
-    private UntypedNode taxAmountExclusive;
+    private Long taxAmountExclusive;
     /**
      * The tax_amount_inclusive property
      */
-    private UntypedNode taxAmountInclusive;
+    private Long taxAmountInclusive;
     /**
      * The tax_percentage property
      */
@@ -70,18 +69,18 @@ public class PlanTaxCalculationResponse implements Parsable {
     }
     /**
      * Gets the amount_total property value. The amount_total property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getAmountTotal() {
+    public Long getAmountTotal() {
         return this.amountTotal;
     }
     /**
      * Gets the base_amount property value. The base_amount property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getBaseAmount() {
+    public Long getBaseAmount() {
         return this.baseAmount;
     }
     /**
@@ -131,8 +130,8 @@ public class PlanTaxCalculationResponse implements Parsable {
     @jakarta.annotation.Nonnull
     public Map<String, java.util.function.Consumer<ParseNode>> getFieldDeserializers() {
         final HashMap<String, java.util.function.Consumer<ParseNode>> deserializerMap = new HashMap<String, java.util.function.Consumer<ParseNode>>(12);
-        deserializerMap.put("amount_total", (n) -> { this.setAmountTotal(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("base_amount", (n) -> { this.setBaseAmount(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("amount_total", (n) -> { this.setAmountTotal(n.getLongValue()); });
+        deserializerMap.put("base_amount", (n) -> { this.setBaseAmount(n.getLongValue()); });
         deserializerMap.put("billing_address", (n) -> { this.setBillingAddress(n.getObjectValue(BillingAddress::createFromDiscriminatorValue)); });
         deserializerMap.put("billing_cycle", (n) -> { this.setBillingCycle(n.getEnumValue(BillingCycle::forValue)); });
         deserializerMap.put("calculated_at", (n) -> { this.setCalculatedAt(n.getOffsetDateTimeValue()); });
@@ -140,8 +139,8 @@ public class PlanTaxCalculationResponse implements Parsable {
         deserializerMap.put("currency", (n) -> { this.setCurrency(n.getStringValue()); });
         deserializerMap.put("plan_id", (n) -> { this.setPlanId(n.getStringValue()); });
         deserializerMap.put("plan_name", (n) -> { this.setPlanName(n.getStringValue()); });
-        deserializerMap.put("tax_amount_exclusive", (n) -> { this.setTaxAmountExclusive(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
-        deserializerMap.put("tax_amount_inclusive", (n) -> { this.setTaxAmountInclusive(n.getObjectValue(UntypedNode::createFromDiscriminatorValue)); });
+        deserializerMap.put("tax_amount_exclusive", (n) -> { this.setTaxAmountExclusive(n.getLongValue()); });
+        deserializerMap.put("tax_amount_inclusive", (n) -> { this.setTaxAmountInclusive(n.getLongValue()); });
         deserializerMap.put("tax_percentage", (n) -> { this.setTaxPercentage(n.getDoubleValue()); });
         return deserializerMap;
     }
@@ -163,18 +162,18 @@ public class PlanTaxCalculationResponse implements Parsable {
     }
     /**
      * Gets the tax_amount_exclusive property value. The tax_amount_exclusive property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getTaxAmountExclusive() {
+    public Long getTaxAmountExclusive() {
         return this.taxAmountExclusive;
     }
     /**
      * Gets the tax_amount_inclusive property value. The tax_amount_inclusive property
-     * @return a {@link UntypedNode}
+     * @return a {@link Long}
      */
     @jakarta.annotation.Nullable
-    public UntypedNode getTaxAmountInclusive() {
+    public Long getTaxAmountInclusive() {
         return this.taxAmountInclusive;
     }
     /**
@@ -191,8 +190,8 @@ public class PlanTaxCalculationResponse implements Parsable {
      */
     public void serialize(@jakarta.annotation.Nonnull final SerializationWriter writer) {
         Objects.requireNonNull(writer);
-        writer.writeObjectValue("amount_total", this.getAmountTotal());
-        writer.writeObjectValue("base_amount", this.getBaseAmount());
+        writer.writeLongValue("amount_total", this.getAmountTotal());
+        writer.writeLongValue("base_amount", this.getBaseAmount());
         writer.writeObjectValue("billing_address", this.getBillingAddress());
         writer.writeEnumValue("billing_cycle", this.getBillingCycle());
         writer.writeOffsetDateTimeValue("calculated_at", this.getCalculatedAt());
@@ -200,22 +199,22 @@ public class PlanTaxCalculationResponse implements Parsable {
         writer.writeStringValue("currency", this.getCurrency());
         writer.writeStringValue("plan_id", this.getPlanId());
         writer.writeStringValue("plan_name", this.getPlanName());
-        writer.writeObjectValue("tax_amount_exclusive", this.getTaxAmountExclusive());
-        writer.writeObjectValue("tax_amount_inclusive", this.getTaxAmountInclusive());
+        writer.writeLongValue("tax_amount_exclusive", this.getTaxAmountExclusive());
+        writer.writeLongValue("tax_amount_inclusive", this.getTaxAmountInclusive());
         writer.writeDoubleValue("tax_percentage", this.getTaxPercentage());
     }
     /**
      * Sets the amount_total property value. The amount_total property
      * @param value Value to set for the amount_total property.
      */
-    public void setAmountTotal(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setAmountTotal(@jakarta.annotation.Nullable final Long value) {
         this.amountTotal = value;
     }
     /**
      * Sets the base_amount property value. The base_amount property
      * @param value Value to set for the base_amount property.
      */
-    public void setBaseAmount(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setBaseAmount(@jakarta.annotation.Nullable final Long value) {
         this.baseAmount = value;
     }
     /**
@@ -271,14 +270,14 @@ public class PlanTaxCalculationResponse implements Parsable {
      * Sets the tax_amount_exclusive property value. The tax_amount_exclusive property
      * @param value Value to set for the tax_amount_exclusive property.
      */
-    public void setTaxAmountExclusive(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setTaxAmountExclusive(@jakarta.annotation.Nullable final Long value) {
         this.taxAmountExclusive = value;
     }
     /**
      * Sets the tax_amount_inclusive property value. The tax_amount_inclusive property
      * @param value Value to set for the tax_amount_inclusive property.
      */
-    public void setTaxAmountInclusive(@jakarta.annotation.Nullable final UntypedNode value) {
+    public void setTaxAmountInclusive(@jakarta.annotation.Nullable final Long value) {
         this.taxAmountInclusive = value;
     }
     /**
